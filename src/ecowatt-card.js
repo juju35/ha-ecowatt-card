@@ -2279,7 +2279,11 @@ const resolve = (hass, config) => {
     if (!days.length) {
       for (const e of entries.filter((x) => x.platform === "ecowatt" && domainOf(x.entity_id) === "sensor")) {
         const m = /_(?:day_|j)(\d)$/.exec(e.entity_id);
-        if (m) days.push({ index: Number(m[1]), entity: e.entity_id });
+        // A renamed entity: its name says the day (Aujourd'hui, Demain, J+2, J+3).
+        const name = String(hass.states[e.entity_id]?.attributes?.friendly_name || e.original_name || "");
+        const byName = /aujourd|today/i.test(name) ? 0 : /demain|tomorrow/i.test(name) ? 1 : /j\s*\+\s*(\d)/i.exec(name)?.[1];
+        const index = m ? Number(m[1]) : byName === undefined ? null : Number(byName);
+        if (index !== null) days.push({ index, entity: e.entity_id });
       }
       if (days.length) source = "ecowatt";
     }
@@ -2439,6 +2443,15 @@ class EcoWattCard extends CardBase {
       const own = m.source === "ecowatt" && hours ? null : levelOf(attrs.level_code ?? s.state);
       out[idx] = { date, entity: d.entity, level: own ?? (hours ? worst(hours) : null), hours, message: attrs.message || null };
     }
+    // My EcoWatt by RTE only makes today's day sensor by default: the other days come from its calendar of downgraded
+    // levels, normal unless an event covers some of their hours.
+    if (m.calendar && this._events) {
+      for (let i = 0; i < MAX_DAYS; i++) {
+        if (out[i]) continue;
+        const date = today + i * DAY_MS;
+        out[i] = { date, entity: m.calendar, level: 1, hours: null, message: null, fromCalendar: true };
+      }
+    }
     // Hours from the hourly sensors and the calendar's tight periods (My EcoWatt by RTE): normal hours are those of a
     // day whose level is normal.
     for (let i = 0; i < MAX_DAYS; i++) {
@@ -2469,6 +2482,7 @@ class EcoWattCard extends CardBase {
         if (d.level !== null && d.level >= 2) for (let h = 0; h < 24; h++) if (hours[h] === null || hours[h] < 2) hours[h] ??= 1;
         d.hours = hours;
       }
+      if (d.fromCalendar && d.hours) d.level = worst(d.hours);
     }
     return out;
   }
@@ -2688,7 +2702,7 @@ class EcoWattCard extends CardBase {
   }
 
   _emptyKey(m) {
-    return m.days.length ? null : "no_data_found";
+    return m.days.length || m.calendar ? null : "no_data_found";
   }
 
   _render() {

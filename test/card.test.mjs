@@ -253,3 +253,43 @@ test("every clickable element can be reached and used from the keyboard", async 
   }
   assert.ok(NOW > 0);
 });
+
+test("My EcoWatt by RTE as set up by default: today's sensor and the calendar give the 4 days", async () => {
+  const data = mockData();
+  for (const id of ["sensor.ecowatt_niveau_demain", "sensor.ecowatt_niveau_dans_2_jours", "sensor.ecowatt_niveau_dans_3_jours"]) {
+    delete data.states[id];
+    delete data.entities[id];
+  }
+  const card = new EcoWattCard();
+  card._connected = true;
+  card.setConfig({});
+  card.hass = makeHass("default", { data });
+  card.connectedCallback();
+  await new Promise((r) => setTimeout(r, 0));
+  await new Promise((r) => setTimeout(r, 0));
+  const h = card.shadowRoot.innerHTML.replace(/[   ]/g, " ");
+  assert.equal((h.match(/class="hour /g) || []).length, 96);
+  assert.match(h, /Tomorrow: tight 8 – 9 AM, 6 – 8 PM/);
+  assert.match(h, /chip warn[^>]*>.*Tight tomorrow/s);
+});
+
+test("ecowatt with renamed entities: the day comes from the name", () => {
+  const states = {};
+  const entities = {};
+  ["Ecowatt Aujourd'hui", "Ecowatt Demain", "Ecowatt J+2", "Ecowatt J+3"].forEach((name, i) => {
+    const id = `sensor.signal_${i}`;
+    entities[id] = { entity_id: id, platform: "ecowatt" };
+    states[id] = { entity_id: id, state: "Vert", attributes: { friendly_name: name, h0: "Vert" } };
+  });
+  const m = ew.resolve({ states, entities }, {});
+  assert.equal(m.source, "ecowatt");
+  same(
+    m.days.map((d) => [d.index, d.entity]),
+    [
+      [0, "sensor.signal_0"],
+      [1, "sensor.signal_1"],
+      [2, "sensor.signal_2"],
+      [3, "sensor.signal_3"],
+    ],
+  );
+});
