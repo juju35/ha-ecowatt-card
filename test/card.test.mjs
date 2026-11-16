@@ -122,23 +122,24 @@ test("header chip, hero and lines: tight tomorrow, the next tight period", async
   const { html } = await mount();
   const h = html();
   assert.match(h, /chip warn[^>]*>.*Tight tomorrow/s);
-  assert.match(h, /class="verdict ok">Normal</);
+  assert.match(h, /class="big verdict ok"><b>Normal</);
   assert.match(h, /Tomorrow: tight 8 – 9 AM, 6 – 8 PM/);
   assert.match(h, /Next tight period tomorrow 8:00 AM/);
-  // 24 hours a day, the current one marked.
-  assert.equal((h.match(/class="hour /g) || []).length, 48);
+  // 24 hours a day for the 4 days, the current one marked; the dial shows today's 24 hours.
+  assert.equal((h.match(/class="hour /g) || []).length, 96);
+  assert.equal((h.match(/class="seg /g) || []).length, 24);
   assert.equal((h.match(/class="hour ok now"/g) || []).length, 1);
 });
 
-test("tight now and power cuts now: the medal, the chip and the current hour say it", async () => {
+test("tight now and power cuts now: the dial, the chip and the current hour say it", async () => {
   const tight = (await mount({}, "tight")).html();
   assert.match(tight, /chip warn[^>]*>.*Tight today/s);
-  assert.match(tight, /class="medal warn"/);
+  assert.match(tight, /class="core warn"/);
   assert.match(tight, /Tight grid now: save power/);
   assert.match(tight, /class="hour warn now"/);
   const cut = (await mount({}, "cut")).html();
   assert.match(cut, /chip crit[^>]*>.*Cuts today/s);
-  assert.match(cut, /class="medal crit"/);
+  assert.match(cut, /class="core crit"/);
   assert.match(cut, /Today: cuts 9 – 10 AM/);
   assert.match(cut, /Power cuts now/);
 });
@@ -150,14 +151,18 @@ test("a tight day whose hours are not published yet says so", async () => {
   assert.match(html(), /Tight hours not published yet/);
 });
 
-test("options: sections hidden, folded, and a click elsewhere folds them back", async () => {
-  const { card, html } = await mount({ show_days: false, collapsed: ["tomorrow"] });
-  assert.doesNotMatch(html(), /Next days/i);
-  assert.equal((html().match(/class="hour /g) || []).length, 24);
-  click(card, { action: "toggle_section", section: "tomorrow" });
-  assert.equal((html().match(/class="hour /g) || []).length, 48);
+test("options: rows hidden, the forecast folded, and a click elsewhere folds it back", async () => {
+  const days = (await mount({ show_days: false })).html();
+  assert.equal((days.match(/class="hour /g) || []).length, 48);
+  const hours = (await mount({ show_hours: false })).html();
+  assert.equal((hours.match(/class="hour /g) || []).length, 48);
+  assert.doesNotMatch(hours, /class="dname today/);
+  const { card, html } = await mount({ collapsed: ["forecast"] });
+  assert.equal((html().match(/class="hour /g) || []).length, 0);
+  click(card, { action: "toggle_section", section: "forecast" });
+  assert.equal((html().match(/class="hour /g) || []).length, 96);
   card._outside.tap({ composedPath: () => [] });
-  assert.equal((html().match(/class="hour /g) || []).length, 24);
+  assert.equal((html().match(/class="hour /g) || []).length, 0);
 });
 
 test("an hour opens the day's sensor (more-info)", async () => {
@@ -167,15 +172,16 @@ test("an hour opens the day's sensor (more-info)", async () => {
   assert.equal(card.events.at(-1).detail.entityId, "sensor.ecowatt_niveau_demain");
 });
 
-test("mini card: the lines and the hours of the day to watch; the detail button shows the full card", async () => {
+test("mini card: the dial and the lines; the detail button shows the full card", async () => {
   const { card, html } = await mount({}, "default", EcoWattMiniCard);
-  // Today is normal and tomorrow tight: the strip shows tomorrow.
-  assert.match(html(), /mini-strip" role="img" aria-label="Tomorrow"/);
-  assert.match(html(), /class="zoom"/);
+  assert.match(html(), /content mini/);
+  assert.match(html(), /class="dial clickable"/);
+  assert.match(html(), /Tomorrow: tight 8 – 9 AM, 6 – 8 PM/);
+  assert.doesNotMatch(html(), /class="hour /);
   click(card, { action: "zoom" });
-  assert.match(html(), /TODAY|section-title/);
+  assert.match(html(), /FORECAST|section-title/);
   card._unzoom.tap({ composedPath: () => [] });
-  assert.match(html(), /mini-strip/);
+  assert.match(html(), /content mini/);
 });
 
 test("nothing found: a clear message instead of an empty card", async () => {
