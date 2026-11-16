@@ -5,7 +5,7 @@
 ### Features
 - New look, in line with the other cards: a 24-hour dial of today (each hour in its level's colour, the hand on the current hour, the level now in the middle) beside the level in large and its lines.
 - The hours become a 4-day forecast grid, one row a day with a legend of the levels shown, in a single `forecast` section (the `today`, `tomorrow` and `next_days` sections are gone from `collapsed`).
-- Mini card: a small dial of today beside the lines.
+- Mini card: a small dial of today beside the lines, above the strip of the day to watch.
 
 ### Fixes
 - My EcoWatt by RTE as set up by default (only today's day sensor): tomorrow and the next days now come from its calendar of downgraded levels.

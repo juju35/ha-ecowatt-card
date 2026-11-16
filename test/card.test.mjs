@@ -177,7 +177,8 @@ test("mini card: the dial and the lines; the detail button shows the full card",
   assert.match(html(), /content mini/);
   assert.match(html(), /class="dial clickable"/);
   assert.match(html(), /Tomorrow: tight 8 – 9 AM, 6 – 8 PM/);
-  assert.doesNotMatch(html(), /class="hour /);
+  // Today is normal and tomorrow tight: the strip shows tomorrow.
+  assert.match(html(), /mini-strip" role="img" aria-label="Tomorrow"/);
   click(card, { action: "zoom" });
   assert.match(html(), /FORECAST|section-title/);
   card._unzoom.tap({ composedPath: () => [] });
@@ -292,4 +293,23 @@ test("ecowatt with renamed entities: the day comes from the name", () => {
       [3, "sensor.signal_3"],
     ],
   );
+});
+
+test("the legend names only the levels shown; the next days still come from the calendar without the hours", async () => {
+  const noDays = (await mount({ show_days: false })).html();
+  assert.doesNotMatch(noDays, /<i><\/i>Low-carbon/);
+  assert.match(noDays, /<i><\/i>Tight/);
+  const data = mockData();
+  for (const id of ["sensor.ecowatt_niveau_demain", "sensor.ecowatt_niveau_dans_2_jours", "sensor.ecowatt_niveau_dans_3_jours"]) {
+    delete data.states[id];
+    delete data.entities[id];
+  }
+  const card = new EcoWattCard();
+  card._connected = true;
+  card.setConfig({ show_hours: false });
+  card.hass = makeHass("default", { data });
+  card.connectedCallback();
+  await new Promise((r) => setTimeout(r, 0));
+  await new Promise((r) => setTimeout(r, 0));
+  assert.equal((card.shadowRoot.innerHTML.match(/class="hour /g) || []).length, 48);
 });

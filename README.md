@@ -184,7 +184,7 @@ Power cuts now (9 – 10 AM), tight around them:
 
 ### Mini card
 
-A small dial of today and the lines: today, tomorrow and the next tight period.
+A small dial of today, the lines (today, tomorrow, the next tight period) and the strip of the day to watch: today, or tomorrow when only tomorrow is tight.
 
 | Light | Dark |
 |---|---|

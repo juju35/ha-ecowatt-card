@@ -2283,7 +2283,7 @@ const resolve = (hass, config) => {
         const name = String(hass.states[e.entity_id]?.attributes?.friendly_name || e.original_name || "");
         const byName = /aujourd|today/i.test(name) ? 0 : /demain|tomorrow/i.test(name) ? 1 : /j\s*\+\s*(\d)/i.exec(name)?.[1];
         const index = m ? Number(m[1]) : byName === undefined ? null : Number(byName);
-        if (index !== null) days.push({ index, entity: e.entity_id });
+        if (index !== null && !days.some((d) => d.index === index)) days.push({ index, entity: e.entity_id });
       }
       if (days.length) source = "ecowatt";
     }
@@ -2318,6 +2318,8 @@ const ECO_STYLE = `
   .dial .hand { stroke: var(--primary-text-color); stroke-width: 2.5; stroke-linecap: round; }
   .core { position: absolute; left: 37%; top: 37%; width: 26%; height: 26%; border-radius: 50%; display: grid; place-items: center;
           background: var(--c); color: #fff; }
+  /* A dark icon on the light orange and teal: the white one would not read. */
+  .core.warn, .core.low { color: rgba(0, 0, 0, .78); }
   .core .icon { width: 18px; height: 18px; }
   .core.warn::before, .core.crit::before { content: ""; position: absolute; inset: -2px; border-radius: 50%; border: 2px solid var(--c);
                                             animation: ew-wave 2s ease-out infinite; }
@@ -2346,6 +2348,10 @@ const ECO_STYLE = `
   .legend { grid-column: 2; display: flex; flex-wrap: wrap; gap: 4px 12px; font-size: 12px; color: var(--secondary-text-color); margin-top: 2px; }
   .legend span { display: inline-flex; align-items: center; gap: 5px; }
   .legend i { width: 9px; height: 9px; border-radius: 2px; background: var(--c); }
+  .grid .dname .short { display: none; }
+  .mini-strip { display: grid; grid-template-columns: repeat(24, minmax(0, 1fr)); gap: 1px; margin-top: 2px; }
+  .mini-strip .hour { height: 8px; border-radius: 2px; cursor: default; }
+  .mini-strip .hour.now { box-shadow: 0 0 0 1px var(--card-background-color, #fff), 0 0 0 2px var(--primary-text-color); }
   .content.mini .dial { width: 84px; height: 84px; }
   .content.mini .dial .tick { display: none; }
   .content.mini .dial .seg { stroke-width: 10; }
@@ -2356,10 +2362,15 @@ const ECO_STYLE = `
     .strip { gap: 1px; }
     .axis span:nth-child(even) { visibility: hidden; }
     .grid { column-gap: 6px; }
-    .grid .dname { max-width: 54px; }
+    .grid .dname .long { display: none; }
+    .grid .dname .short { display: inline; }
+    .hero .line span { white-space: normal; overflow-wrap: anywhere; }
+  }
+  @container (max-width: 260px) {
+    .hero > .dial { display: none; }
   }
   @container (max-width: 200px) {
-    .hero > .dial, .content.mini > .dial { display: none; }
+    .content.mini > .dial { display: none; }
   }
 `;
 
@@ -2410,7 +2421,7 @@ class EcoWattCard extends CardBase {
   _fetchCalendar(force) {
     const m = this._resolve();
     const cal = m?.calendar;
-    if (!cal || !this._hass?.callApi || this._config.show_hours === false) return;
+    if (!cal || !this._hass?.callApi || (this._config.show_hours === false && this._config.show_days === false)) return;
     const st = this._s(cal);
     const key = `${cal}|${st?.last_updated}|${Math.floor(Date.now() / 1.8e6)}`;
     if (!force && key === this._calKey) return;
@@ -2622,16 +2633,19 @@ class EcoWattCard extends CardBase {
   _forecast(days) {
     const c = this._config;
     const rows = [];
+    const shown = [];
     let notes = "";
     days.forEach((d, i) => {
       if (!d || (i < 2 && c.show_hours === false) || (i >= 2 && c.show_days === false)) return;
-      rows.push(`<span class="dname${i === 0 ? " today" : ""} clickable"${moreInfo(d.entity)}>${esc(this._dayName(d.date))}</span>${this._strip(d)}`);
+      shown.push(d);
+      const short = new Intl.DateTimeFormat(this._locale(), { weekday: "short" }).format(new Date(d.date));
+      rows.push(`<span class="dname${i === 0 ? " today" : ""} clickable"${moreInfo(d.entity)}><span class="long">${esc(this._dayName(d.date))}</span><span class="short">${esc(short)}</span></span>${this._strip(d)}`);
       notes += this._notes(d);
     });
     if (!rows.length) return "";
-    const first = days.find(Boolean);
-    const seen = new Set(days.filter(Boolean).flatMap((d) => (d.hours || [d.level]).filter((l) => l !== null && l !== undefined)));
-    const legend = [1, 2, 3, 0].filter((l) => l === 1 || seen.has(l)).map((l) => `<span class="${LEVEL_CLASS[l]}"><i></i>${esc(this._t(`level_${l}`))}</span>`);
+    const first = shown[0];
+    const seen = new Set(shown.flatMap((d) => (d.hours || [d.level]).filter((l) => l !== null && l !== undefined)));
+    const legend = [1, 2, 3, 0].filter((l) => seen.has(l)).map((l) => `<span class="${LEVEL_CLASS[l]}"><i></i>${esc(this._t(`level_${l}`))}</span>`);
     return this._section(
       "forecast",
       ICONS.calendar,
@@ -2683,7 +2697,8 @@ class EcoWattCard extends CardBase {
     const [bx, by] = pt(cur, 17);
     const cls = l === null ? "idle" : LEVEL_CLASS[l];
     const word = l === null ? this._t("no_data") : this._t(`now_${l}`);
-    return `<div class="dial clickable"${moreInfo(sum.now.entity)} role="img" aria-label="${esc(word)}"><svg viewBox="0 0 120 120">${segs.join("")}${ticks.join("")}<line class="hand" x1="${bx}" y1="${by}" x2="${hx}" y2="${hy}"/></svg><div class="core ${cls}">${svgIcon(ICONS[LEVEL_ICON[l ?? 1]])}</div></div>`;
+    const target = sum.now.entity ? ` class="dial clickable"${moreInfo(sum.now.entity)}` : ` class="dial" role="img"`;
+    return `<div${target} aria-label="${esc(word)}"><svg viewBox="0 0 120 120">${segs.join("")}${ticks.join("")}<line class="hand" x1="${bx}" y1="${by}" x2="${hx}" y2="${hy}"/></svg><div class="core ${cls}">${svgIcon(ICONS[LEVEL_ICON[l ?? 1]])}</div></div>`;
   }
 
   _hero(sum) {
@@ -2727,12 +2742,16 @@ class EcoWattMiniCard extends withMini(EcoWattCard) {
     const { m, error } = this._ready();
     if (error) return error;
     const sum = this._summary(m);
+    // The day to watch: today, or tomorrow when only tomorrow is tight.
+    const [today, tomorrow] = sum.days;
+    const focus = today && (today.level ?? 0) < 2 && tomorrow && (tomorrow.level ?? 0) >= 2 ? tomorrow : today || tomorrow;
+    const strip = focus && this._config.show_hours !== false ? this._strip(focus, true) : "";
     return `<style>${BASE_STYLE}${ECO_STYLE}${MINI_STYLE}</style>
       <ha-card>
         ${this._head(sum, "")}
         <div class="content mini">
           ${this._dial(sum)}
-          <div class="info">${this._lines(sum)}</div>
+          <div class="info">${this._lines(sum)}${strip}</div>
         </div>
       </ha-card>`;
   }
