@@ -64,6 +64,8 @@ const STRINGS = {
     calendar: "Calendar of tight hours (optional)",
     show_hours: "Show the hours of today and tomorrow",
     show_days: "Show the next days",
+    forecast: "Forecast",
+    right_now: "Now · {time}",
     cancel: "Cancel",
     left: "{time} left",
     today_at: "today {time}",
@@ -119,6 +121,8 @@ const STRINGS = {
     calendar: "Calendrier des heures tendues (facultatif)",
     show_hours: "Afficher les heures d'aujourd'hui et de demain",
     show_days: "Afficher les prochains jours",
+    forecast: "Prévisions",
+    right_now: "Maintenant · {time}",
     cancel: "Annuler",
     left: "{time} restantes",
     today_at: "aujourd'hui {time}",
@@ -174,6 +178,8 @@ const STRINGS = {
     calendar: "Kalender der angespannten Stunden (optional)",
     show_hours: "Stunden von heute und morgen anzeigen",
     show_days: "Nächste Tage anzeigen",
+    forecast: "Vorhersage",
+    right_now: "Jetzt · {time}",
     cancel: "Abbrechen",
     left: "Noch {time}",
     today_at: "heute {time}",
@@ -229,6 +235,8 @@ const STRINGS = {
     calendar: "Calendario de horas tensas (opcional)",
     show_hours: "Mostrar las horas de hoy y mañana",
     show_days: "Mostrar los próximos días",
+    forecast: "Previsión",
+    right_now: "Ahora · {time}",
     cancel: "Cancelar",
     left: "Quedan {time}",
     today_at: "hoy {time}",
@@ -284,6 +292,8 @@ const STRINGS = {
     calendar: "Calendario delle ore tese (facoltativo)",
     show_hours: "Mostra le ore di oggi e domani",
     show_days: "Mostra i prossimi giorni",
+    forecast: "Previsioni",
+    right_now: "Ora · {time}",
     cancel: "Annulla",
     left: "{time} rimanenti",
     today_at: "oggi {time}",
@@ -339,6 +349,8 @@ const STRINGS = {
     calendar: "Agenda van krappe uren (optioneel)",
     show_hours: "Uren van vandaag en morgen tonen",
     show_days: "Komende dagen tonen",
+    forecast: "Verwachting",
+    right_now: "Nu · {time}",
     cancel: "Annuleren",
     left: "Nog {time}",
     today_at: "vandaag {time}",
@@ -394,6 +406,8 @@ const STRINGS = {
     calendar: "Calendário das horas tensas (opcional)",
     show_hours: "Mostrar as horas de hoje e amanhã",
     show_days: "Mostrar os próximos dias",
+    forecast: "Previsão",
+    right_now: "Agora · {time}",
     cancel: "Cancelar",
     left: "Faltam {time}",
     today_at: "hoje {time}",
@@ -449,6 +463,8 @@ const STRINGS = {
     calendar: "Kalendarz napiętych godzin (opcjonalnie)",
     show_hours: "Pokaż godziny dziś i jutro",
     show_days: "Pokaż kolejne dni",
+    forecast: "Prognoza",
+    right_now: "Teraz · {time}",
     cancel: "Anuluj",
     left: "Pozostało {time}",
     today_at: "dziś {time}",
@@ -504,6 +520,8 @@ const STRINGS = {
     calendar: "Календар оптерећених сати (опционо)",
     show_hours: "Прикажи сате данас и сутра",
     show_days: "Прикажи следеће дане",
+    forecast: "Прогноза",
+    right_now: "Сада · {time}",
     cancel: "Откажи",
     left: "Преостало {time}",
     today_at: "данас {time}",
@@ -559,6 +577,8 @@ const STRINGS = {
     calendar: "Kalendar opterećenih sati (opciono)",
     show_hours: "Prikaži sate danas i sutra",
     show_days: "Prikaži sledeće dane",
+    forecast: "Prognoza",
+    right_now: "Sada · {time}",
     cancel: "Otkaži",
     left: "Preostalo {time}",
     today_at: "danas {time}",
@@ -614,6 +634,8 @@ const STRINGS = {
     calendar: "Calendarul orelor tensionate (opțional)",
     show_hours: "Afișează orele de azi și de mâine",
     show_days: "Afișează zilele următoare",
+    forecast: "Prognoză",
+    right_now: "Acum · {time}",
     cancel: "Anulează",
     left: "Mai sunt {time}",
     today_at: "azi {time}",
@@ -669,6 +691,8 @@ const STRINGS = {
     calendar: "Kalender over pressede timer (valgfri)",
     show_hours: "Vis timerne i dag og i morgen",
     show_days: "Vis de kommende dage",
+    forecast: "Prognose",
+    right_now: "Nu · {time}",
     cancel: "Annuller",
     left: "{time} tilbage",
     today_at: "i dag {time}",
@@ -724,6 +748,8 @@ const STRINGS = {
     calendar: "Kalender över ansträngda timmar (valfri)",
     show_hours: "Visa timmarna i dag och i morgon",
     show_days: "Visa kommande dagar",
+    forecast: "Prognos",
+    right_now: "Nu · {time}",
     cancel: "Avbryt",
     left: "{time} kvar",
     today_at: "i dag {time}",
@@ -779,6 +805,8 @@ const STRINGS = {
     calendar: "Календар на напрегнатите часове (по избор)",
     show_hours: "Показване на часовете днес и утре",
     show_days: "Показване на следващите дни",
+    forecast: "Прогноза",
+    right_now: "Сега · {time}",
     cancel: "Отказ",
     left: "Остават {time}",
     today_at: "днес {time}",
@@ -834,6 +862,8 @@ const STRINGS = {
     calendar: "Календарь напряжённых часов (необязательно)",
     show_hours: "Показывать часы сегодня и завтра",
     show_days: "Показывать следующие дни",
+    forecast: "Прогноз",
+    right_now: "Сейчас · {time}",
     cancel: "Отмена",
     left: "Осталось {time}",
     today_at: "сегодня {time}",
@@ -889,6 +919,8 @@ const STRINGS = {
     calendar: "Календар напружених годин (необов'язково)",
     show_hours: "Показувати години сьогодні й завтра",
     show_days: "Показувати наступні дні",
+    forecast: "Прогноз",
+    right_now: "Зараз · {time}",
     cancel: "Скасувати",
     left: "Залишилось {time}",
     today_at: "сьогодні {time}",
@@ -944,6 +976,8 @@ const STRINGS = {
     calendar: "A feszített órák naptára (opcionális)",
     show_hours: "A mai és a holnapi órák megjelenítése",
     show_days: "A következő napok megjelenítése",
+    forecast: "Előrejelzés",
+    right_now: "Most · {time}",
     cancel: "Mégse",
     left: "Még {time}",
     today_at: "ma {time}",
@@ -999,6 +1033,8 @@ const STRINGS = {
     calendar: "Kalendár napätých hodín (voliteľné)",
     show_hours: "Zobraziť hodiny dnes a zajtra",
     show_days: "Zobraziť ďalšie dni",
+    forecast: "Predpoveď",
+    right_now: "Teraz · {time}",
     cancel: "Zrušiť",
     left: "Zostáva {time}",
     today_at: "dnes {time}",
@@ -1054,6 +1090,8 @@ const STRINGS = {
     calendar: "Kalendář napjatých hodin (volitelné)",
     show_hours: "Zobrazit hodiny dnes a zítra",
     show_days: "Zobrazit další dny",
+    forecast: "Předpověď",
+    right_now: "Nyní · {time}",
     cancel: "Zrušit",
     left: "Zbývá {time}",
     today_at: "dnes {time}",
@@ -1109,6 +1147,8 @@ const STRINGS = {
     calendar: "Koledar obremenjenih ur (neobvezno)",
     show_hours: "Prikaži ure danes in jutri",
     show_days: "Prikaži naslednje dni",
+    forecast: "Napoved",
+    right_now: "Zdaj · {time}",
     cancel: "Prekliči",
     left: "Še {time}",
     today_at: "danes {time}",
@@ -1164,6 +1204,8 @@ const STRINGS = {
     calendar: "Noslogoto stundu kalendārs (neobligāts)",
     show_hours: "Rādīt šodienas un rītdienas stundas",
     show_days: "Rādīt nākamās dienas",
+    forecast: "Prognoze",
+    right_now: "Tagad · {time}",
     cancel: "Atcelt",
     left: "Atlikušas {time}",
     today_at: "šodien {time}",
@@ -1219,6 +1261,8 @@ const STRINGS = {
     calendar: "Ημερολόγιο επιβαρυμένων ωρών (προαιρετικό)",
     show_hours: "Εμφάνιση των ωρών σήμερα και αύριο",
     show_days: "Εμφάνιση των επόμενων ημερών",
+    forecast: "Πρόβλεψη",
+    right_now: "Τώρα · {time}",
     cancel: "Ακύρωση",
     left: "Απομένουν {time}",
     today_at: "σήμερα {time}",
@@ -1324,7 +1368,7 @@ const fmtWhen = (hass, config, ms) => {
   if (day === 1) return t(hass, config, "tomorrow_at", { time });
   if (day === -1) return t(hass, config, "yesterday_at", { time });
   const locale = intlLocale(hass, config);
-  if (day > 1 && day < 7) return `${new Intl.DateTimeFormat(locale, { weekday: "short" }).format(new Date(ms))} ${time}`;
+  if (Math.abs(day) < 7) return `${new Intl.DateTimeFormat(locale, { weekday: "short" }).format(new Date(ms))} ${time}`;
   return new Intl.DateTimeFormat(locale, { month: "short", day: "numeric", hour: "numeric", minute: "2-digit" }).format(new Date(ms));
 };
 
@@ -1415,6 +1459,45 @@ const BASE_STYLE = `
   .ring-svg circle { fill: none; }
   .ring-svg .track { stroke: color-mix(in srgb, var(--c, var(--ew-accent)) 18%, transparent); }
   .ring-svg .prog { stroke: var(--c, var(--ew-accent)); stroke-linecap: round; transition: stroke-dashoffset 1s linear; }
+  /* Hero, as on the garden and tempo cards: a flat illustration on the left, a big value and a few colored lines on the right. */
+  .hero { display: flex; align-items: center; gap: 12px; min-width: 0; }
+  .hero-art { flex: none; width: 120px; display: grid; place-items: center; }
+  .hero-art svg { width: 100%; height: auto; display: block; }
+  .hero-body { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 5px; }
+  .hero-kick { font-size: 12px; color: var(--secondary-text-color); }
+  .big { display: flex; align-items: baseline; gap: 6px; min-width: 0; }
+  .big .icon { width: 24px; height: 24px; align-self: center; color: var(--c, var(--ew-accent)); }
+  .big b { font-size: 30px; font-weight: 400; line-height: 1; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .big span { font-size: 14px; color: var(--secondary-text-color); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .hero .line { font-size: 12.5px; }
+  /* Rows, as the watering zones: a round icon (grey at rest, tinted otherwise, a ring while it runs), name, colored state, a button. */
+  .row { display: flex; align-items: center; gap: 12px; min-width: 0; }
+  .row-icon { position: relative; width: 40px; height: 40px; border-radius: 50%; flex: none; display: grid; place-items: center;
+              --t: var(--c, var(--ew-idle)); background: color-mix(in srgb, var(--t) 18%, transparent); color: color-mix(in srgb, var(--t) 70%, var(--primary-text-color)); }
+  .row-icon.idle { background: color-mix(in srgb, var(--primary-text-color) 8%, transparent); color: var(--secondary-text-color); }
+  .row-icon > .icon, .row-icon > ha-icon { width: 22px; height: 22px; --mdc-icon-size: 22px; }
+  .row-icon .ring-svg { inset: -2px; width: 44px; height: 44px; }
+  .badge { position: absolute; right: -3px; bottom: -3px; width: 17px; height: 17px; border-radius: 50%; display: grid; place-items: center;
+           background: var(--b, var(--ew-ok)); color: #fff; box-shadow: 0 0 0 2px var(--ha-card-background, var(--card-background-color, #fff)); }
+  .badge .icon { width: 11px; height: 11px; }
+  .row-text { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 1px; }
+  .row-name { font-size: 14px; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .row-state { font-size: 12.5px; color: var(--secondary-text-color); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .row-state.ok, .row-state.warn, .row-state.crit, .row-state.active, .row-state.accent { color: color-mix(in srgb, var(--c) 60%, var(--primary-text-color)); }
+  .rows { display: flex; flex-direction: column; gap: 8px; }
+  /* Tiles, as on room overview: grey, tinted with a border when they need a look; small badges below. */
+  .tiles { display: grid; gap: 8px; grid-template-columns: repeat(var(--cols, 2), minmax(0, 1fr)); }
+  .tile { min-width: 0; display: flex; flex-direction: column; gap: 6px; padding: 8px; border-radius: 10px; box-sizing: border-box;
+          background: var(--secondary-background-color, rgba(127,127,127,.12)); border: 1px solid transparent; }
+  .tile.tint { background: color-mix(in srgb, var(--c) 13%, var(--secondary-background-color, rgba(127,127,127,.12)));
+               border-color: color-mix(in srgb, var(--c) 30%, transparent); }
+  .tile-head { display: flex; align-items: center; gap: 8px; min-width: 0; }
+  .tile .row-icon { width: 30px; height: 30px; } .tile .row-icon > .icon { width: 18px; height: 18px; }
+  .tile .row-state { font-size: 12px; }
+  .badges { display: flex; gap: 4px; flex-wrap: wrap; }
+  .pill { display: inline-flex; align-items: center; gap: 3px; font-size: 12px; padding: 1px 7px; border-radius: 10px;
+          color: color-mix(in srgb, var(--c, var(--ew-idle)) 60%, var(--primary-text-color)); background: color-mix(in srgb, var(--c, var(--ew-idle)) 14%, transparent); }
+  .pill .icon { width: 14px; height: 14px; color: var(--c, var(--ew-idle)); }
   @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; animation: none !important; } }
   @container (max-width: 230px) {
     .chip { padding: 4px; flex: none; }
@@ -2064,7 +2147,8 @@ class EditorBase extends HTMLElement {
     const defaults = { ...Object.fromEntries(toggles), ...this.constructor.defaults };
     if (!this._form) {
       this._form = document.createElement("ha-form");
-      this._form.computeLabel = (s) => t(this._hass, this._config, s.name);
+      // A field's label is its `<name>_field` text when the card also uses `<name>` for something else (a section).
+      this._form.computeLabel = (s) => t(this._hass, this._config, STRINGS.en[`${s.name}_field`] ? `${s.name}_field` : s.name);
       this._form.computeHelper = (s) => (STRINGS.en[`${s.name}_helper`] ? t(this._hass, this._config, `${s.name}_helper`) : undefined);
       this._form.addEventListener("value-changed", (ev) => {
         ev.stopPropagation();
@@ -2195,7 +2279,11 @@ const resolve = (hass, config) => {
     if (!days.length) {
       for (const e of entries.filter((x) => x.platform === "ecowatt" && domainOf(x.entity_id) === "sensor")) {
         const m = /_(?:day_|j)(\d)$/.exec(e.entity_id);
-        if (m) days.push({ index: Number(m[1]), entity: e.entity_id });
+        // A renamed entity: its name says the day (Aujourd'hui, Demain, J+2, J+3).
+        const name = String(hass.states[e.entity_id]?.attributes?.friendly_name || e.original_name || "");
+        const byName = /aujourd|today/i.test(name) ? 0 : /demain|tomorrow/i.test(name) ? 1 : /j\s*\+\s*(\d)/i.exec(name)?.[1];
+        const index = m ? Number(m[1]) : byName === undefined ? null : Number(byName);
+        if (index !== null && !days.some((d) => d.index === index)) days.push({ index, entity: e.entity_id });
       }
       if (days.length) source = "ecowatt";
     }
@@ -2219,53 +2307,70 @@ const resolve = (hass, config) => {
 // ---------------------------------------------------------------------------
 
 const ECO_STYLE = `
-  .low { --c: #00897b; }
-  .hero { display: flex; gap: 14px; align-items: center; }
-  .medal { position: relative; width: 72px; height: 72px; flex: none; display: grid; place-items: center; border-radius: 50%;
-           background: color-mix(in srgb, var(--c) 14%, transparent); color: var(--c); }
-  .medal .icon { width: 34px; height: 34px; }
-  .medal::after { content: ""; position: absolute; inset: 0; border-radius: 50%; border: 3px solid var(--c); opacity: .85; }
-  .medal.warn::before, .medal.crit::before { content: ""; position: absolute; inset: -2px; border-radius: 50%; border: 2px solid var(--c);
-                                              animation: ew-wave 2s ease-out infinite; }
-  .medal.crit .icon { animation: ew-blink 1.2s steps(2, jump-none) infinite; }
-  @keyframes ew-wave { 0% { transform: scale(1); opacity: .8; } 100% { transform: scale(1.35); opacity: 0; } }
+  .low { --c: #00acc1; }
+  /* The dial: the 24 hours of today round a clock, the hand on the current hour, the level in the middle. */
+  .dial { position: relative; width: 120px; height: 120px; flex: none; }
+  .dial svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+  .dial .seg { fill: none; stroke-width: 12; stroke: color-mix(in srgb, var(--c, var(--ew-idle)) 85%, transparent); }
+  .dial .seg.none { stroke: var(--divider-color, rgba(127,127,127,.25)); }
+  .dial .seg.past { opacity: .35; }
+  .dial .tick { font-size: 8px; fill: var(--secondary-text-color); text-anchor: middle; dominant-baseline: central; }
+  .dial .hand { stroke: var(--primary-text-color); stroke-width: 2.5; stroke-linecap: round; }
+  .core { position: absolute; left: 37%; top: 37%; width: 26%; height: 26%; border-radius: 50%; display: grid; place-items: center;
+          background: var(--c); color: #fff; }
+  /* A dark icon on the light orange and teal: the white one would not read. */
+  .core.warn, .core.low { color: rgba(0, 0, 0, .78); }
+  .core .icon { width: 18px; height: 18px; }
+  .core.warn::before, .core.crit::before { content: ""; position: absolute; inset: -2px; border-radius: 50%; border: 2px solid var(--c);
+                                            animation: ew-wave 2s ease-out infinite; }
+  .core.crit .icon { animation: ew-blink 1.2s steps(2, jump-none) infinite; }
+  @keyframes ew-wave { 0% { transform: scale(1); opacity: .8; } 100% { transform: scale(1.9); opacity: 0; } }
   @keyframes ew-blink { 0%, 100% { opacity: 1; } 50% { opacity: .35; } }
-  .verdict { font-size: 28px; line-height: 1.1; font-weight: 400; color: color-mix(in srgb, var(--c) 55%, var(--primary-text-color)); }
+  .verdict b { color: color-mix(in srgb, var(--c) 60%, var(--primary-text-color)); }
+  /* The forecast: one row a day, 24 hours a row. */
+  .grid { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 5px 10px; align-items: center; }
+  .grid .dname { font-size: 12.5px; color: var(--secondary-text-color); white-space: nowrap; max-width: 90px; overflow: hidden; text-overflow: ellipsis; }
+  .grid .dname.today { color: var(--primary-text-color); font-weight: 500; }
   .strip { display: grid; grid-template-columns: repeat(24, minmax(0, 1fr)); gap: 2px; }
-  .hour { height: 24px; border-radius: 3px; background: color-mix(in srgb, var(--c, var(--ew-idle)) 85%, transparent); position: relative; cursor: pointer; }
+  .hour { height: 18px; border-radius: 3px; background: color-mix(in srgb, var(--c, var(--ew-idle)) 85%, transparent); position: relative; cursor: pointer; }
   .hour.none { background: var(--divider-color, rgba(127,127,127,.25)); }
-  .hour.past { opacity: .4; }
+  .hour.past { opacity: .3; }
   .hour.now { box-shadow: 0 0 0 2px var(--card-background-color, #fff), 0 0 0 4px var(--primary-text-color); z-index: 1; }
   .hour.now.warn, .hour.now.crit { animation: ew-pulse 1.4s ease-in-out infinite; }
   @keyframes ew-pulse { 0%, 100% { filter: brightness(1); } 50% { filter: brightness(1.35); } }
   /* Tight and cut hours are hatched as well as coloured: told apart without the colours. */
   .hour.warn { background-image: repeating-linear-gradient(135deg, transparent 0 4px, rgba(255,255,255,.28) 4px 6px); }
   .hour.crit { background-image: repeating-linear-gradient(45deg, transparent 0 3px, rgba(0,0,0,.25) 3px 5px); }
-  .axis { display: flex; justify-content: space-between; font-size: 11px; color: var(--secondary-text-color); margin-top: 4px; }
-  .strip-note { font-size: 12px; margin-top: 4px; color: var(--secondary-text-color); }
-  .strip-note.warn, .strip-note.crit { color: color-mix(in srgb, var(--c) 50%, var(--primary-text-color)); }
-  .days { display: grid; grid-template-columns: repeat(auto-fit, minmax(84px, 1fr)); gap: 8px; }
-  .day { border: 1px solid var(--divider-color, rgba(127,127,127,.25)); border-radius: 12px; padding: 8px 10px; display: flex; flex-direction: column; gap: 4px; min-width: 0; }
-  .day .d { font-size: 12px; color: var(--secondary-text-color); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-  .day .l { display: flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 500; color: color-mix(in srgb, var(--c) 50%, var(--primary-text-color)); min-width: 0; }
-  .day .l span { overflow-wrap: anywhere; line-height: 1.2; }
-  .medal.small { width: 48px; height: 48px; }
-  .medal.small .icon { width: 22px; height: 22px; }
-  .medal.small::after { border-width: 2px; }
+  .axis { display: flex; justify-content: space-between; font-size: 11px; color: var(--secondary-text-color); }
+  .notes { grid-column: 2; display: flex; flex-direction: column; gap: 2px; }
+  .strip-note { font-size: 12px; color: var(--secondary-text-color); }
+  .strip-note.warn, .strip-note.crit { color: color-mix(in srgb, var(--c) 60%, var(--primary-text-color)); }
+  .legend { grid-column: 2; display: flex; flex-wrap: wrap; gap: 4px 12px; font-size: 12px; color: var(--secondary-text-color); margin-top: 2px; }
+  .legend span { display: inline-flex; align-items: center; gap: 5px; }
+  .legend i { width: 9px; height: 9px; border-radius: 2px; background: var(--c); }
+  .grid .dname .short { display: none; }
   .mini-strip { display: grid; grid-template-columns: repeat(24, minmax(0, 1fr)); gap: 1px; margin-top: 2px; }
   .mini-strip .hour { height: 8px; border-radius: 2px; cursor: default; }
   .mini-strip .hour.now { box-shadow: 0 0 0 1px var(--card-background-color, #fff), 0 0 0 2px var(--primary-text-color); }
+  .content.mini .dial { width: 84px; height: 84px; }
+  .content.mini .dial .tick { display: none; }
+  .content.mini .dial .seg { stroke-width: 10; }
   @container (max-width: 300px) {
-    .hero { gap: 10px; }
-    .medal { width: 48px; height: 48px; }
-    .medal .icon { width: 22px; height: 22px; }
-    .medal::after { border-width: 2px; }
-    .verdict { font-size: 22px; }
+    .dial { width: 88px; height: 88px; }
+    .dial .tick { display: none; }
+    .big b { font-size: 24px; }
     .strip { gap: 1px; }
     .axis span:nth-child(even) { visibility: hidden; }
+    .grid { column-gap: 6px; }
+    .grid .dname .long { display: none; }
+    .grid .dname .short { display: inline; }
+    .hero .line span { white-space: normal; overflow-wrap: anywhere; }
+  }
+  @container (max-width: 260px) {
+    .hero > .dial { display: none; }
   }
   @container (max-width: 200px) {
-    .hero > .clickable, .medal-wrap { display: none; }
+    .content.mini > .dial { display: none; }
   }
 `;
 
@@ -2316,7 +2421,7 @@ class EcoWattCard extends CardBase {
   _fetchCalendar(force) {
     const m = this._resolve();
     const cal = m?.calendar;
-    if (!cal || !this._hass?.callApi || this._config.show_hours === false) return;
+    if (!cal || !this._hass?.callApi || (this._config.show_hours === false && this._config.show_days === false)) return;
     const st = this._s(cal);
     const key = `${cal}|${st?.last_updated}|${Math.floor(Date.now() / 1.8e6)}`;
     if (!force && key === this._calKey) return;
@@ -2349,6 +2454,15 @@ class EcoWattCard extends CardBase {
       const own = m.source === "ecowatt" && hours ? null : levelOf(attrs.level_code ?? s.state);
       out[idx] = { date, entity: d.entity, level: own ?? (hours ? worst(hours) : null), hours, message: attrs.message || null };
     }
+    // My EcoWatt by RTE only makes today's day sensor by default: the other days come from its calendar of downgraded
+    // levels, normal unless an event covers some of their hours.
+    if (m.calendar && this._events) {
+      for (let i = 0; i < MAX_DAYS; i++) {
+        if (out[i]) continue;
+        const date = today + i * DAY_MS;
+        out[i] = { date, entity: m.calendar, level: 1, hours: null, message: null, fromCalendar: true };
+      }
+    }
     // Hours from the hourly sensors and the calendar's tight periods (My EcoWatt by RTE): normal hours are those of a
     // day whose level is normal.
     for (let i = 0; i < MAX_DAYS; i++) {
@@ -2379,6 +2493,7 @@ class EcoWattCard extends CardBase {
         if (d.level !== null && d.level >= 2) for (let h = 0; h < 24; h++) if (hours[h] === null || hours[h] < 2) hours[h] ??= 1;
         d.hours = hours;
       }
+      if (d.fromCalendar && d.hours) d.level = worst(d.hours);
     }
     return out;
   }
@@ -2506,21 +2621,38 @@ class EcoWattCard extends CardBase {
     return `<div class="axis">${[0, 6, 12, 18, 24].map((h) => `<span>${esc(f.format(new Date(day.date + h * 3.6e6)))}</span>`).join("")}</div>`;
   }
 
-  _daySection(key, day) {
-    if (!day) return "";
-    const ranges = this._rangesText(day);
-    const note = day.level !== null && day.level >= 2 && !ranges ? `<div class="strip-note ${LEVEL_CLASS[day.level]}">${esc(this._t("hours_unknown"))}</div>` : "";
-    const msg = day.message && day.level !== null && day.level >= 2 ? `<div class="strip-note ${LEVEL_CLASS[day.level]}">${esc(day.message)}</div>` : "";
-    return this._section(key, ICONS.clock, this._dayName(day.date), day.level === null ? "" : this._t(`level_${day.level}`), `${this._strip(day)}${this._axis(day)}${note}${msg}`);
+  _notes(day) {
+    if (!day || day.level === null || day.level < 2) return "";
+    const out = [];
+    if (!this._rangesText(day)) out.push(`<div class="strip-note ${LEVEL_CLASS[day.level]}">${esc(this._t("hours_unknown"))}</div>`);
+    if (day.message) out.push(`<div class="strip-note ${LEVEL_CLASS[day.level]}">${esc(day.message)}</div>`);
+    return out.join("");
   }
 
-  _dayTiles(days) {
-    const tiles = days.filter(Boolean).map((d) => {
-      const cls = d.level === null ? "idle" : LEVEL_CLASS[d.level];
-      const label = d.level === null ? this._t("no_data") : this._t(`level_${d.level}`);
-      return `<div class="day ${cls} clickable"${moreInfo(d.entity)} aria-label="${esc(`${this._dayName(d.date)}: ${label}`)}"><span class="d">${esc(this._dayName(d.date))}</span><span class="l"><span class="dot"></span><span>${esc(label)}</span></span></div>`;
+  // One row a day: today and tomorrow hour by hour (show_hours), then the next days (show_days).
+  _forecast(days) {
+    const c = this._config;
+    const rows = [];
+    const shown = [];
+    let notes = "";
+    days.forEach((d, i) => {
+      if (!d || (i < 2 && c.show_hours === false) || (i >= 2 && c.show_days === false)) return;
+      shown.push(d);
+      const short = new Intl.DateTimeFormat(this._locale(), { weekday: "short" }).format(new Date(d.date));
+      rows.push(`<span class="dname${i === 0 ? " today" : ""} clickable"${moreInfo(d.entity)}><span class="long">${esc(this._dayName(d.date))}</span><span class="short">${esc(short)}</span></span>${this._strip(d)}`);
+      notes += this._notes(d);
     });
-    return tiles.length ? `<div class="days">${tiles.join("")}</div>` : "";
+    if (!rows.length) return "";
+    const first = shown[0];
+    const seen = new Set(shown.flatMap((d) => (d.hours || [d.level]).filter((l) => l !== null && l !== undefined)));
+    const legend = [1, 2, 3, 0].filter((l) => seen.has(l)).map((l) => `<span class="${LEVEL_CLASS[l]}"><i></i>${esc(this._t(`level_${l}`))}</span>`);
+    return this._section(
+      "forecast",
+      ICONS.calendar,
+      this._t("forecast"),
+      "",
+      `<div class="grid">${rows.join("")}<span></span>${this._axis(first)}${notes ? `<div class="notes">${notes}</div>` : ""}<div class="legend">${legend.join("")}</div></div>`,
+    );
   }
 
   _lines(sum) {
@@ -2539,9 +2671,34 @@ class EcoWattCard extends CardBase {
     return out.join("");
   }
 
-  _medal(level, size = "") {
-    const cls = level === null ? "idle" : LEVEL_CLASS[level];
-    return `<div class="medal ${cls}${size}">${svgIcon(ICONS[LEVEL_ICON[level ?? 1]])}</div>`;
+  // The 24 hours of today round a clock (midnight on top), the hand on the current hour, the level in the middle.
+  _dial(sum) {
+    const day = sum.days[0];
+    const l = sum.now.level;
+    const now = new Date();
+    const cur = now.getHours() + now.getMinutes() / 60;
+    const pt = (h, r) => {
+      const a = (h / 24) * 2 * Math.PI - Math.PI / 2;
+      return [(60 + r * Math.cos(a)).toFixed(1), (60 + r * Math.sin(a)).toFixed(1)];
+    };
+    const segs = [];
+    for (let h = 0; h < 24; h++) {
+      const lv = day ? (day.hours ? day.hours[h] : day.level) : null;
+      const [x0, y0] = pt(h + 0.06, 50);
+      const [x1, y1] = pt(h + 0.94, 50);
+      const cls = lv === null || lv === undefined ? "none" : LEVEL_CLASS[lv];
+      segs.push(`<path class="seg ${cls}${h + 1 <= cur ? " past" : ""}" d="M${x0} ${y0} A50 50 0 0 1 ${x1} ${y1}"/>`);
+    }
+    const ticks = [0, 6, 12, 18].map((h) => {
+      const [x, y] = pt(h, 33);
+      return `<text class="tick" x="${x}" y="${y}">${h}</text>`;
+    });
+    const [hx, hy] = pt(cur, 58);
+    const [bx, by] = pt(cur, 17);
+    const cls = l === null ? "idle" : LEVEL_CLASS[l];
+    const word = l === null ? this._t("no_data") : this._t(`now_${l}`);
+    const target = sum.now.entity ? ` class="dial clickable"${moreInfo(sum.now.entity)}` : ` class="dial" role="img"`;
+    return `<div${target} aria-label="${esc(word)}"><svg viewBox="0 0 120 120">${segs.join("")}${ticks.join("")}<line class="hand" x1="${bx}" y1="${by}" x2="${hx}" y2="${hy}"/></svg><div class="core ${cls}">${svgIcon(ICONS[LEVEL_ICON[l ?? 1]])}</div></div>`;
   }
 
   _hero(sum) {
@@ -2549,8 +2706,8 @@ class EcoWattCard extends CardBase {
     const cls = l === null ? "idle" : LEVEL_CLASS[l];
     const word = l === null ? this._t("no_data") : this._t(`now_${l}`);
     return `<div class="hero">
-      <div class="clickable"${moreInfo(sum.now.entity)} aria-label="${esc(word)}">${this._medal(l)}</div>
-      <div class="info"><div class="verdict ${cls}">${esc(word)}</div>${this._lines(sum)}</div>
+      ${this._dial(sum)}
+      <div class="hero-body"><span class="hero-kick">${esc(this._t("right_now", { time: fmtTime(this._hass, this._config, Date.now()) }))}</span><div class="big verdict ${cls}"><b>${esc(word)}</b></div>${this._lines(sum)}</div>
     </div>`;
   }
 
@@ -2560,21 +2717,14 @@ class EcoWattCard extends CardBase {
   }
 
   _emptyKey(m) {
-    return m.days.length ? null : "no_data_found";
+    return m.days.length || m.calendar ? null : "no_data_found";
   }
 
   _render() {
     const { m, error } = this._ready();
     if (error) return error;
-    const c = this._config;
     const sum = this._summary(m);
-    const parts = [this._hero(sum)];
-    const [today, tomorrow, ...rest] = sum.days;
-    if (c.show_hours !== false) {
-      if (today) parts.push(this._daySection("today", today));
-      if (tomorrow) parts.push(this._daySection("tomorrow", tomorrow));
-    }
-    if (c.show_days !== false && rest.some(Boolean)) parts.push(this._section("next_days", ICONS.calendar, this._t("next_days"), "", this._dayTiles(sum.days)));
+    const parts = [this._hero(sum), this._forecast(sum.days)];
     return `<style>${BASE_STYLE}${ECO_STYLE}</style>
       <ha-card>
         ${this._head(sum, this._subtitle(sum))}
@@ -2591,18 +2741,17 @@ class EcoWattMiniCard extends withMini(EcoWattCard) {
   _renderMini() {
     const { m, error } = this._ready();
     if (error) return error;
-    const c = this._config;
     const sum = this._summary(m);
-    const l = sum.now.level;
     // The day to watch: today, or tomorrow when only tomorrow is tight.
     const [today, tomorrow] = sum.days;
     const focus = today && (today.level ?? 0) < 2 && tomorrow && (tomorrow.level ?? 0) >= 2 ? tomorrow : today || tomorrow;
+    const strip = focus && this._config.show_hours !== false ? this._strip(focus, true) : "";
     return `<style>${BASE_STYLE}${ECO_STYLE}${MINI_STYLE}</style>
       <ha-card>
         ${this._head(sum, "")}
         <div class="content mini">
-          <div class="medal-wrap clickable"${moreInfo(sum.now.entity)} aria-label="${esc(l === null ? this._t("no_data") : this._t(`now_${l}`))}">${this._medal(l, " small")}</div>
-          <div class="info">${this._lines(sum)}${focus && c.show_hours !== false ? this._strip(focus, true) : ""}</div>
+          ${this._dial(sum)}
+          <div class="info">${this._lines(sum)}${strip}</div>
         </div>
       </ha-card>`;
   }
@@ -2623,7 +2772,7 @@ class EcoWattCardEditor extends EditorBase {
   }
 
   static get sections() {
-    return ["today", "tomorrow", "next_days"];
+    return ["forecast"];
   }
 
   _fields() {

@@ -29,11 +29,11 @@ The sensors are **discovered automatically** from the Home Assistant entity regi
 
 - Two cards: a full **EcoWatt Card** (`custom:ecowatt-card`) and a compact **EcoWatt Mini Card** (`custom:ecowatt-mini-card`)
 - The four EcoWatt levels, each with its colour, icon and word: **low-carbon** electricity (teal leaf), **normal** (green), **tight grid** (orange, hatched: cuts possible, save power) and **power cuts** (red, hatched the other way); the hatching tells the levels apart without the colours
-- **Level now** in a large medal: a wave goes out of it while the grid is tight, its icon blinks during power cuts (see [Animations](#animations))
-- **Today and tomorrow hour by hour**: 24 bars per day, the current hour outlined, past hours faded; hover or focus a bar to read its hour and level
-- The **tight hours** in words ("Tomorrow: tight 8 – 9 AM, 6 – 8 PM"), the **next tight period** ("Next tight period tomorrow 8:00 AM", "Tight grid now: save power"), the **next days** as tiles
+- **A 24-hour dial** of today: each hour round the clock in its level's colour, past hours faded, the hand on the current hour and the level now in the middle; a wave goes out of it while the grid is tight, its icon blinks during power cuts (see [Animations](#animations))
+- **A 4-day forecast grid**: one row a day, 24 hours a row, the current hour outlined, past hours faded, with a legend of the levels shown; hover or focus an hour to read its hour and level
+- The **tight hours** in words ("Tomorrow: tight 8 – 9 AM, 6 – 8 PM"), the **next tight period** ("Next tight period tomorrow 8:00 AM", "Tight grid now: save power")
 - Header icon in a tinted round badge, in the colour of the level now, and a status chip on the title's line: **No alert**, **Tight tomorrow**, **Cuts today**…
-- Collapsible sections (today, tomorrow, next days), folded back to their defaults by a click elsewhere on the page
+- Collapsible forecast section, folded back to their defaults by a click elsewhere on the page
 - Detail button on the mini card (top right): it switches the mini card to the full card's content and back; a click anywhere outside the card brings the compact view back
 - Click any hour, day or line to open its Home Assistant history (more-info dialog)
 - Visual editor in the dashboard UI for both cards (no YAML needed)
@@ -44,8 +44,8 @@ The sensors are **discovered automatically** from the Home Assistant entity regi
 
 | Integration | What the cards use |
 |---|---|
-| <img src="https://raw.githubusercontent.com/juju35/ha-ecowatt-card/main/images/rte_ecowatt.png" alt="" width="16"> [My EcoWatt by RTE](https://github.com/kamaradclimber/rte-ecowatt) (custom, `rte_ecowatt`) | Its day sensors (today, and the days you added, up to D+3) with their level code; its sensor of the current hour; its calendar of tight hours (*Ecowatt downgraded level*), read for the hours of each day |
-| <img src="https://raw.githubusercontent.com/juju35/ha-ecowatt-card/main/images/rte_ecowatt.png" alt="" width="16"> [ecowatt](https://github.com/adetante/ha-ecowatt) (custom, `ecowatt`) | Its four day sensors (`sensor.ecowatt_day_0` to `_3`) and their hourly attributes `h0` to `h23` (Vert / Orange / Rouge) |
+| <img src="https://raw.githubusercontent.com/juju35/ha-ecowatt-card/main/images/rte_ecowatt.png" alt="" width="16"> [My EcoWatt by RTE](https://github.com/kamaradclimber/rte-ecowatt) (custom, `rte_ecowatt`) | Its day sensors (today, and the days you added, up to D+3) with their level code; its sensor of the current hour; its calendar of tight hours (*Ecowatt downgraded level*), read for the hours of each day — and for the days without a sensor, so the default setup (today's sensor only) still shows 4 days |
+| <img src="https://raw.githubusercontent.com/juju35/ha-ecowatt-card/main/images/rte_ecowatt.png" alt="" width="16"> [ecowatt](https://github.com/adetante/ha-ecowatt) (custom, `ecowatt`) | Its four day sensors (`sensor.ecowatt_day_0` to `_3`, or by their name *Aujourd'hui*, *Demain*, *J+2*, *J+3* when renamed) and their hourly attributes `h0` to `h23` (Vert / Orange / Rouge) |
 | <img src="https://raw.githubusercontent.com/juju35/ha-ecowatt-card/main/images/myelectricaldata.png" alt="" width="16"> [MyElectricalData](https://github.com/MyElectricalData/myelectricaldata_import) (add-on, MQTT) | Its EcoWatt sensors `…ecowatt_j0` to `_j2` (level 1 to 3) and their `forecast` attribute, hour by hour |
 | Any sensor | Listed in `days`: a level as a number (0 to 3) or a word (green / orange / red, vert / orange / rouge, normal, tight…), with its hours in attributes (`h0`…`h23`, a `forecast` map, or the attribute named by `attribute`) |
 
@@ -122,8 +122,7 @@ show_title: true
 show_subtitle: true
 show_hours: true
 show_days: true
-collapsed:
-  - next_days
+collapsed: []
 language: en
 ```
 
@@ -143,9 +142,9 @@ language: en
 | `days` | both | Automatic | Day sensors, today first: entity ids, or objects with `entity` and `attribute` (the attribute holding the day's hours); absent, the sensors of the [supported integrations](#supported-integrations) |
 | `now` | both | Automatic | Sensor of the level of the current hour (My EcoWatt by RTE: *Ecowatt level now*) |
 | `calendar` | both | Automatic | Calendar whose events are the tight hours (My EcoWatt by RTE: *Ecowatt downgraded level*) |
-| `show_hours` | both | `true` | Today's and tomorrow's hours (and, on the mini card, the strip of the day to watch); with `false`, the calendar is not read |
-| `show_days` | both | `true` | The next days, as tiles |
-| `collapsed` | both | `[]` | Sections folded by default, among `today`, `tomorrow` and `next_days`. Click a section title (or Tab to it and press Enter or Space) to fold or unfold it |
+| `show_hours` | both | `true` | Today's and tomorrow's rows in the forecast; with `false`, the calendar is not read |
+| `show_days` | both | `true` | The next days' rows in the forecast |
+| `collapsed` | both | `[]` | Sections folded by default, only `forecast`. Click a section title (or Tab to it and press Enter or Space) to fold or unfold it |
 | `zoom` | mini | `true` | Detail button at the top right of the mini card: it shows the full card's content (with the same options, so `show_days`, `collapsed`… can be set on the mini card too, in its visual editor as well) and switches back to the compact view; a click outside the card also brings the compact view back. `false` removes the button |
 | `language` | both | Auto | Force language: `fr`, `en`, `de`, `es`, `sr`, `sr-Latn`, `it`, `nl`, `pt`, `pl`, `ro`, `da`, `sv`, `bg`, `ru`, `uk`, `hu`, `sk`, `cs`, `sl`, `lv` or `el` (auto-detects from HA settings) |
 
@@ -155,15 +154,15 @@ language: en
 
 ### Animations
 
-The medal of the level now animates when the grid is under stress; it is still otherwise. Each state plays its own animation, and every one of them honours `prefers-reduced-motion`.
+The middle of the dial animates when the grid is under stress; it is still otherwise. Each state plays its own animation, and every one of them honours `prefers-reduced-motion`.
 
-When the grid is tight now, a wave goes out of the medal and the current hour pulses:
+When the grid is tight now, a wave goes out of the middle of the dial and the current hour pulses:
 
 | Light | Dark |
 |---|---|
 | <img src="https://raw.githubusercontent.com/juju35/ha-ecowatt-card/main/screenshots/tight.gif" alt="tight grid animation" width="400"> | <img src="https://raw.githubusercontent.com/juju35/ha-ecowatt-card/main/screenshots/tight-dark.gif" alt="tight grid animation dark" width="400"> |
 
-During power cuts, the medal's icon blinks as well:
+During power cuts, the icon in the middle of the dial blinks as well:
 
 | Light | Dark |
 |---|---|
@@ -185,7 +184,7 @@ Power cuts now (9 – 10 AM), tight around them:
 
 ### Mini card
 
-The strip shows the day to watch: today, or tomorrow when only tomorrow is tight.
+A small dial of today, the lines (today, tomorrow, the next tight period) and the strip of the day to watch: today, or tomorrow when only tomorrow is tight.
 
 | Light | Dark |
 |---|---|
