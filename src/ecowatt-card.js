@@ -84,7 +84,7 @@ const STRINGS = {
     no_registry: "This card needs Home Assistant 2024.8 or later.",
     illustration: "Animated illustration",
     illustration_theme: "Illustration theme",
-    theme_auto: "Automatic (sun or dark theme)",
+    theme_auto: "Automatic (follows the theme)",
     theme_day: "Day",
     theme_night: "Night",
     unavailable: "Unavailable",
@@ -146,7 +146,7 @@ const STRINGS = {
     no_registry: "Cette carte nécessite Home Assistant 2024.8 ou plus récent.",
     illustration: "Illustration animée",
     illustration_theme: "Thème de l’illustration",
-    theme_auto: "Automatique (soleil ou thème sombre)",
+    theme_auto: "Automatique (suit le thème)",
     theme_day: "Jour",
     theme_night: "Nuit",
     unavailable: "Indisponible",
@@ -208,7 +208,7 @@ const STRINGS = {
     no_registry: "Diese Karte benötigt Home Assistant 2024.8 oder neuer.",
     illustration: "Animierte Illustration",
     illustration_theme: "Thema der Illustration",
-    theme_auto: "Automatisch (Sonne oder dunkles Design)",
+    theme_auto: "Automatisch (folgt dem Design)",
     theme_day: "Tag",
     theme_night: "Nacht",
     unavailable: "Nicht verfügbar",
@@ -270,7 +270,7 @@ const STRINGS = {
     no_registry: "Esta tarjeta necesita Home Assistant 2024.8 o posterior.",
     illustration: "Ilustración animada",
     illustration_theme: "Tema de la ilustración",
-    theme_auto: "Automático (sol o tema oscuro)",
+    theme_auto: "Automático (sigue el tema)",
     theme_day: "Día",
     theme_night: "Noche",
     unavailable: "No disponible",
@@ -332,7 +332,7 @@ const STRINGS = {
     no_registry: "Questa scheda richiede Home Assistant 2024.8 o successivo.",
     illustration: "Illustrazione animata",
     illustration_theme: "Tema dell’illustrazione",
-    theme_auto: "Automatico (sole o tema scuro)",
+    theme_auto: "Automatico (segue il tema)",
     theme_day: "Giorno",
     theme_night: "Notte",
     unavailable: "Non disponibile",
@@ -394,7 +394,7 @@ const STRINGS = {
     no_registry: "Deze kaart vereist Home Assistant 2024.8 of nieuwer.",
     illustration: "Geanimeerde illustratie",
     illustration_theme: "Thema van de illustratie",
-    theme_auto: "Automatisch (zon of donker thema)",
+    theme_auto: "Automatisch (volgt het thema)",
     theme_day: "Dag",
     theme_night: "Nacht",
     unavailable: "Niet beschikbaar",
@@ -456,7 +456,7 @@ const STRINGS = {
     no_registry: "Este cartão requer o Home Assistant 2024.8 ou posterior.",
     illustration: "Ilustração animada",
     illustration_theme: "Tema da ilustração",
-    theme_auto: "Automático (sol ou tema escuro)",
+    theme_auto: "Automático (segue o tema)",
     theme_day: "Dia",
     theme_night: "Noite",
     unavailable: "Indisponível",
@@ -518,7 +518,7 @@ const STRINGS = {
     no_registry: "Ta karta wymaga Home Assistant 2024.8 lub nowszego.",
     illustration: "Animowana ilustracja",
     illustration_theme: "Motyw ilustracji",
-    theme_auto: "Automatycznie (słońce lub ciemny motyw)",
+    theme_auto: "Automatycznie (według motywu)",
     theme_day: "Dzień",
     theme_night: "Noc",
     unavailable: "Niedostępne",
@@ -580,7 +580,7 @@ const STRINGS = {
     no_registry: "Ова картица захтева Home Assistant 2024.8 или новији.",
     illustration: "Анимирана илустрација",
     illustration_theme: "Тема илустрације",
-    theme_auto: "Аутоматски (сунце или тамна тема)",
+    theme_auto: "Аутоматски (прати тему)",
     theme_day: "Дан",
     theme_night: "Ноћ",
     unavailable: "Недоступно",
@@ -642,7 +642,7 @@ const STRINGS = {
     no_registry: "Ova kartica zahteva Home Assistant 2024.8 ili noviji.",
     illustration: "Animirana ilustracija",
     illustration_theme: "Tema ilustracije",
-    theme_auto: "Automatski (sunce ili tamna tema)",
+    theme_auto: "Automatski (prati temu)",
     theme_day: "Dan",
     theme_night: "Noć",
     unavailable: "Nedostupno",
@@ -704,7 +704,7 @@ const STRINGS = {
     no_registry: "Acest card necesită Home Assistant 2024.8 sau mai nou.",
     illustration: "Ilustrație animată",
     illustration_theme: "Tema ilustrației",
-    theme_auto: "Automat (soare sau temă întunecată)",
+    theme_auto: "Automat (urmează tema)",
     theme_day: "Zi",
     theme_night: "Noapte",
     unavailable: "Indisponibil",
@@ -766,7 +766,7 @@ const STRINGS = {
     no_registry: "Dette kort kræver Home Assistant 2024.8 eller nyere.",
     illustration: "Animeret illustration",
     illustration_theme: "Illustrationens tema",
-    theme_auto: "Automatisk (sol eller mørkt tema)",
+    theme_auto: "Automatisk (følger temaet)",
     theme_day: "Dag",
     theme_night: "Nat",
     unavailable: "Utilgængelig",
@@ -828,7 +828,7 @@ const STRINGS = {
     no_registry: "Det här kortet kräver Home Assistant 2024.8 eller senare.",
     illustration: "Animerad illustration",
     illustration_theme: "Illustrationens tema",
-    theme_auto: "Automatiskt (sol eller mörkt tema)",
+    theme_auto: "Automatiskt (följer temat)",
     theme_day: "Dag",
     theme_night: "Natt",
     unavailable: "Otillgänglig",
@@ -890,7 +890,7 @@ const STRINGS = {
     no_registry: "Тази карта изисква Home Assistant 2024.8 или по-нов.",
     illustration: "Анимирана илюстрация",
     illustration_theme: "Тема на илюстрацията",
-    theme_auto: "Автоматично (слънце или тъмна тема)",
+    theme_auto: "Автоматично (следва темата)",
     theme_day: "Ден",
     theme_night: "Нощ",
     unavailable: "Недостъпно",
@@ -952,7 +952,7 @@ const STRINGS = {
     no_registry: "Для этой карточки нужен Home Assistant 2024.8 или новее.",
     illustration: "Анимированная иллюстрация",
     illustration_theme: "Тема иллюстрации",
-    theme_auto: "Автоматически (солнце или тёмная тема)",
+    theme_auto: "Автоматически (по теме)",
     theme_day: "День",
     theme_night: "Ночь",
     unavailable: "Недоступно",
@@ -1014,7 +1014,7 @@ const STRINGS = {
     no_registry: "Для цієї картки потрібен Home Assistant 2024.8 або новіший.",
     illustration: "Анімована ілюстрація",
     illustration_theme: "Тема ілюстрації",
-    theme_auto: "Автоматично (сонце або темна тема)",
+    theme_auto: "Автоматично (за темою)",
     theme_day: "День",
     theme_night: "Ніч",
     unavailable: "Недоступно",
@@ -1076,7 +1076,7 @@ const STRINGS = {
     no_registry: "Ehhez a kártyához Home Assistant 2024.8 vagy újabb szükséges.",
     illustration: "Animált illusztráció",
     illustration_theme: "Az illusztráció témája",
-    theme_auto: "Automatikus (nap vagy sötét téma)",
+    theme_auto: "Automatikus (a témát követi)",
     theme_day: "Nappal",
     theme_night: "Éjszaka",
     unavailable: "Nem elérhető",
@@ -1138,7 +1138,7 @@ const STRINGS = {
     no_registry: "Táto karta vyžaduje Home Assistant 2024.8 alebo novší.",
     illustration: "Animovaná ilustrácia",
     illustration_theme: "Téma ilustrácie",
-    theme_auto: "Automaticky (slnko alebo tmavá téma)",
+    theme_auto: "Automaticky (podľa témy)",
     theme_day: "Deň",
     theme_night: "Noc",
     unavailable: "Nedostupné",
@@ -1200,7 +1200,7 @@ const STRINGS = {
     no_registry: "Tato karta vyžaduje Home Assistant 2024.8 nebo novější.",
     illustration: "Animovaná ilustrace",
     illustration_theme: "Motiv ilustrace",
-    theme_auto: "Automaticky (slunce nebo tmavý motiv)",
+    theme_auto: "Automaticky (podle motivu)",
     theme_day: "Den",
     theme_night: "Noc",
     unavailable: "Nedostupné",
@@ -1262,7 +1262,7 @@ const STRINGS = {
     no_registry: "Ta kartica potrebuje Home Assistant 2024.8 ali novejši.",
     illustration: "Animirana ilustracija",
     illustration_theme: "Tema ilustracije",
-    theme_auto: "Samodejno (sonce ali temna tema)",
+    theme_auto: "Samodejno (sledi temi)",
     theme_day: "Dan",
     theme_night: "Noč",
     unavailable: "Ni na voljo",
@@ -1324,7 +1324,7 @@ const STRINGS = {
     no_registry: "Šai kartītei nepieciešams Home Assistant 2024.8 vai jaunāks.",
     illustration: "Animēta ilustrācija",
     illustration_theme: "Ilustrācijas motīvs",
-    theme_auto: "Automātiski (saule vai tumšais motīvs)",
+    theme_auto: "Automātiski (atbilstoši tēmai)",
     theme_day: "Diena",
     theme_night: "Nakts",
     unavailable: "Nav pieejams",
@@ -1386,7 +1386,7 @@ const STRINGS = {
     no_registry: "Αυτή η κάρτα απαιτεί Home Assistant 2024.8 ή νεότερο.",
     illustration: "Κινούμενη εικονογράφηση",
     illustration_theme: "Θέμα εικονογράφησης",
-    theme_auto: "Αυτόματο (ήλιος ή σκούρο θέμα)",
+    theme_auto: "Αυτόματο (ακολουθεί το θέμα)",
     theme_day: "Ημέρα",
     theme_night: "Νύχτα",
     unavailable: "Μη διαθέσιμο",
@@ -2670,11 +2670,13 @@ const textWidth = (el) => {
   return range.getBoundingClientRect().width;
 };
 
+// Night picture: forced by illustration_theme, else Home Assistant's dark mode alone (a light theme keeps the day
+// picture after sunset).
 const ewIsNight = (hass, config) => {
   const theme = config?.illustration_theme;
   if (theme === "night") return true;
   if (theme === "day") return false;
-  return hass?.states?.["sun.sun"]?.state === "below_horizon" || !!hass?.themes?.darkMode;
+  return !!hass?.themes?.darkMode;
 };
 
 // ---------------------------------------------------------------------------
@@ -2699,7 +2701,7 @@ class EcoWattCard extends CardBase {
   }
 
   _extraDeps() {
-    return [this._events, this._hass?.states?.["sun.sun"]?.state];
+    return [this._events];
   }
 
   _onConnect() {
