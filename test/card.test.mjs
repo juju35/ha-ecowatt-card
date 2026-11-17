@@ -317,12 +317,13 @@ test("the legend names only the levels shown; the next days still come from the 
   assert.equal((card.shadowRoot.innerHTML.match(/class="hour /g) || []).length, 48);
 });
 
-test("night picture: forced, else the sun below the horizon or the dark theme", () => {
+test("night picture: forced, else the dark theme alone", () => {
   const h = (sun, dark) => ({ states: sun ? { "sun.sun": { state: sun } } : {}, themes: { darkMode: dark } });
-  assert.equal(ew.ewIsNight(h("below_horizon", false), {}), true);
+  assert.equal(ew.ewIsNight(h("below_horizon", false), {}), false, "light theme after sunset: day");
+  assert.equal(ew.ewIsNight(h("below_horizon", true), {}), true);
   assert.equal(ew.ewIsNight(h("above_horizon", true), {}), true, "dark theme while the sun is up: night");
   assert.equal(ew.ewIsNight(h("above_horizon", false), {}), false, "light theme while the sun is up: day");
-  assert.equal(ew.ewIsNight(h("unknown", true), {}), true, "no usable sun: the dark theme decides");
+  assert.equal(ew.ewIsNight(h("unknown", true), {}), true);
   assert.equal(ew.ewIsNight(h(null, false), {}), false);
   assert.equal(ew.ewIsNight(h("above_horizon", true), { illustration_theme: "day" }), false);
   assert.equal(ew.ewIsNight(h("above_horizon", false), { illustration_theme: "night" }), true);
