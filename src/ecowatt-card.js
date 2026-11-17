@@ -82,6 +82,11 @@ const STRINGS = {
     show_title: "Show title",
     show_subtitle: "Show subtitle",
     no_registry: "This card needs Home Assistant 2024.8 or later.",
+    illustration: "Animated illustration",
+    illustration_theme: "Illustration theme",
+    theme_auto: "Automatic (sun)",
+    theme_day: "Day",
+    theme_night: "Night",
     unavailable: "Unavailable",
   },
   fr: {
@@ -139,6 +144,11 @@ const STRINGS = {
     show_title: "Afficher le titre",
     show_subtitle: "Afficher le sous-titre",
     no_registry: "Cette carte nécessite Home Assistant 2024.8 ou plus récent.",
+    illustration: "Illustration animée",
+    illustration_theme: "Thème de l’illustration",
+    theme_auto: "Automatique (soleil)",
+    theme_day: "Jour",
+    theme_night: "Nuit",
     unavailable: "Indisponible",
   },
   de: {
@@ -196,6 +206,11 @@ const STRINGS = {
     show_title: "Titel anzeigen",
     show_subtitle: "Untertitel anzeigen",
     no_registry: "Diese Karte benötigt Home Assistant 2024.8 oder neuer.",
+    illustration: "Animierte Illustration",
+    illustration_theme: "Thema der Illustration",
+    theme_auto: "Automatisch (Sonne)",
+    theme_day: "Tag",
+    theme_night: "Nacht",
     unavailable: "Nicht verfügbar",
   },
   es: {
@@ -253,6 +268,11 @@ const STRINGS = {
     show_title: "Mostrar título",
     show_subtitle: "Mostrar subtítulo",
     no_registry: "Esta tarjeta necesita Home Assistant 2024.8 o posterior.",
+    illustration: "Ilustración animada",
+    illustration_theme: "Tema de la ilustración",
+    theme_auto: "Automático (sol)",
+    theme_day: "Día",
+    theme_night: "Noche",
     unavailable: "No disponible",
   },
   it: {
@@ -310,6 +330,11 @@ const STRINGS = {
     show_title: "Mostra titolo",
     show_subtitle: "Mostra sottotitolo",
     no_registry: "Questa scheda richiede Home Assistant 2024.8 o successivo.",
+    illustration: "Illustrazione animata",
+    illustration_theme: "Tema dell’illustrazione",
+    theme_auto: "Automatico (sole)",
+    theme_day: "Giorno",
+    theme_night: "Notte",
     unavailable: "Non disponibile",
   },
   nl: {
@@ -367,6 +392,11 @@ const STRINGS = {
     show_title: "Titel tonen",
     show_subtitle: "Ondertitel tonen",
     no_registry: "Deze kaart vereist Home Assistant 2024.8 of nieuwer.",
+    illustration: "Geanimeerde illustratie",
+    illustration_theme: "Thema van de illustratie",
+    theme_auto: "Automatisch (zon)",
+    theme_day: "Dag",
+    theme_night: "Nacht",
     unavailable: "Niet beschikbaar",
   },
   pt: {
@@ -424,6 +454,11 @@ const STRINGS = {
     show_title: "Mostrar título",
     show_subtitle: "Mostrar subtítulo",
     no_registry: "Este cartão requer o Home Assistant 2024.8 ou posterior.",
+    illustration: "Ilustração animada",
+    illustration_theme: "Tema da ilustração",
+    theme_auto: "Automático (sol)",
+    theme_day: "Dia",
+    theme_night: "Noite",
     unavailable: "Indisponível",
   },
   pl: {
@@ -481,6 +516,11 @@ const STRINGS = {
     show_title: "Pokaż tytuł",
     show_subtitle: "Pokaż podtytuł",
     no_registry: "Ta karta wymaga Home Assistant 2024.8 lub nowszego.",
+    illustration: "Animowana ilustracja",
+    illustration_theme: "Motyw ilustracji",
+    theme_auto: "Automatycznie (słońce)",
+    theme_day: "Dzień",
+    theme_night: "Noc",
     unavailable: "Niedostępne",
   },
   sr: {
@@ -538,6 +578,11 @@ const STRINGS = {
     show_title: "Прикажи наслов",
     show_subtitle: "Прикажи поднаслов",
     no_registry: "Ова картица захтева Home Assistant 2024.8 или новији.",
+    illustration: "Анимирана илустрација",
+    illustration_theme: "Тема илустрације",
+    theme_auto: "Аутоматски (сунце)",
+    theme_day: "Дан",
+    theme_night: "Ноћ",
     unavailable: "Недоступно",
   },
   "sr-Latn": {
@@ -595,6 +640,11 @@ const STRINGS = {
     show_title: "Prikaži naslov",
     show_subtitle: "Prikaži podnaslov",
     no_registry: "Ova kartica zahteva Home Assistant 2024.8 ili noviji.",
+    illustration: "Animirana ilustracija",
+    illustration_theme: "Tema ilustracije",
+    theme_auto: "Automatski (sunce)",
+    theme_day: "Dan",
+    theme_night: "Noć",
     unavailable: "Nedostupno",
   },
   ro: {
@@ -652,6 +702,11 @@ const STRINGS = {
     show_title: "Afișează titlul",
     show_subtitle: "Afișează subtitlul",
     no_registry: "Acest card necesită Home Assistant 2024.8 sau mai nou.",
+    illustration: "Ilustrație animată",
+    illustration_theme: "Tema ilustrației",
+    theme_auto: "Automat (soare)",
+    theme_day: "Zi",
+    theme_night: "Noapte",
     unavailable: "Indisponibil",
   },
   da: {
@@ -709,6 +764,11 @@ const STRINGS = {
     show_title: "Vis titel",
     show_subtitle: "Vis undertitel",
     no_registry: "Dette kort kræver Home Assistant 2024.8 eller nyere.",
+    illustration: "Animeret illustration",
+    illustration_theme: "Illustrationens tema",
+    theme_auto: "Automatisk (sol)",
+    theme_day: "Dag",
+    theme_night: "Nat",
     unavailable: "Utilgængelig",
   },
   sv: {
@@ -766,6 +826,11 @@ const STRINGS = {
     show_title: "Visa titel",
     show_subtitle: "Visa undertitel",
     no_registry: "Det här kortet kräver Home Assistant 2024.8 eller senare.",
+    illustration: "Animerad illustration",
+    illustration_theme: "Illustrationens tema",
+    theme_auto: "Automatiskt (sol)",
+    theme_day: "Dag",
+    theme_night: "Natt",
     unavailable: "Otillgänglig",
   },
   bg: {
@@ -823,6 +888,11 @@ const STRINGS = {
     show_title: "Покажи заглавие",
     show_subtitle: "Покажи подзаглавие",
     no_registry: "Тази карта изисква Home Assistant 2024.8 или по-нов.",
+    illustration: "Анимирана илюстрация",
+    illustration_theme: "Тема на илюстрацията",
+    theme_auto: "Автоматично (слънце)",
+    theme_day: "Ден",
+    theme_night: "Нощ",
     unavailable: "Недостъпно",
   },
   ru: {
@@ -880,6 +950,11 @@ const STRINGS = {
     show_title: "Показывать заголовок",
     show_subtitle: "Показывать подзаголовок",
     no_registry: "Для этой карточки нужен Home Assistant 2024.8 или новее.",
+    illustration: "Анимированная иллюстрация",
+    illustration_theme: "Тема иллюстрации",
+    theme_auto: "Автоматически (солнце)",
+    theme_day: "День",
+    theme_night: "Ночь",
     unavailable: "Недоступно",
   },
   uk: {
@@ -937,6 +1012,11 @@ const STRINGS = {
     show_title: "Показувати заголовок",
     show_subtitle: "Показувати підзаголовок",
     no_registry: "Для цієї картки потрібен Home Assistant 2024.8 або новіший.",
+    illustration: "Анімована ілюстрація",
+    illustration_theme: "Тема ілюстрації",
+    theme_auto: "Автоматично (сонце)",
+    theme_day: "День",
+    theme_night: "Ніч",
     unavailable: "Недоступно",
   },
   hu: {
@@ -994,6 +1074,11 @@ const STRINGS = {
     show_title: "Cím megjelenítése",
     show_subtitle: "Alcím megjelenítése",
     no_registry: "Ehhez a kártyához Home Assistant 2024.8 vagy újabb szükséges.",
+    illustration: "Animált illusztráció",
+    illustration_theme: "Az illusztráció témája",
+    theme_auto: "Automatikus (nap)",
+    theme_day: "Nappal",
+    theme_night: "Éjszaka",
     unavailable: "Nem elérhető",
   },
   sk: {
@@ -1051,6 +1136,11 @@ const STRINGS = {
     show_title: "Zobraziť názov",
     show_subtitle: "Zobraziť podnadpis",
     no_registry: "Táto karta vyžaduje Home Assistant 2024.8 alebo novší.",
+    illustration: "Animovaná ilustrácia",
+    illustration_theme: "Téma ilustrácie",
+    theme_auto: "Automaticky (slnko)",
+    theme_day: "Deň",
+    theme_night: "Noc",
     unavailable: "Nedostupné",
   },
   cs: {
@@ -1108,6 +1198,11 @@ const STRINGS = {
     show_title: "Zobrazit název",
     show_subtitle: "Zobrazit podtitul",
     no_registry: "Tato karta vyžaduje Home Assistant 2024.8 nebo novější.",
+    illustration: "Animovaná ilustrace",
+    illustration_theme: "Motiv ilustrace",
+    theme_auto: "Automaticky (slunce)",
+    theme_day: "Den",
+    theme_night: "Noc",
     unavailable: "Nedostupné",
   },
   sl: {
@@ -1165,6 +1260,11 @@ const STRINGS = {
     show_title: "Prikaži naslov",
     show_subtitle: "Prikaži podnaslov",
     no_registry: "Ta kartica potrebuje Home Assistant 2024.8 ali novejši.",
+    illustration: "Animirana ilustracija",
+    illustration_theme: "Tema ilustracije",
+    theme_auto: "Samodejno (sonce)",
+    theme_day: "Dan",
+    theme_night: "Noč",
     unavailable: "Ni na voljo",
   },
   lv: {
@@ -1222,6 +1322,11 @@ const STRINGS = {
     show_title: "Rādīt virsrakstu",
     show_subtitle: "Rādīt apakšvirsrakstu",
     no_registry: "Šai kartītei nepieciešams Home Assistant 2024.8 vai jaunāks.",
+    illustration: "Animēta ilustrācija",
+    illustration_theme: "Ilustrācijas motīvs",
+    theme_auto: "Automātiski (saule)",
+    theme_day: "Diena",
+    theme_night: "Nakts",
     unavailable: "Nav pieejams",
   },
   el: {
@@ -1279,6 +1384,11 @@ const STRINGS = {
     show_title: "Εμφάνιση τίτλου",
     show_subtitle: "Εμφάνιση υπότιτλου",
     no_registry: "Αυτή η κάρτα απαιτεί Home Assistant 2024.8 ή νεότερο.",
+    illustration: "Κινούμενη εικονογράφηση",
+    illustration_theme: "Θέμα εικονογράφησης",
+    theme_auto: "Αυτόματα (ήλιος)",
+    theme_day: "Ημέρα",
+    theme_night: "Νύχτα",
     unavailable: "Μη διαθέσιμο",
   },
 };
@@ -2375,6 +2485,126 @@ const ECO_STYLE = `
 `;
 
 // ---------------------------------------------------------------------------
+// The illustration: the grid at the right of a 90 px banner (200 × 80 picture over a 10 px lawn strip): wind
+// turbines, pylons and a line whose pulse takes the signal's colour (teal low-carbon, green normal, orange tight,
+// red cuts). The turbines slow down as the grid tightens and stop during cuts; a beacon on the middle pylon
+// blinks when the grid is tight or cut. The left of the banner is open sky for the title.
+// No SVG id is used: several cards on one page cannot clash.
+// ---------------------------------------------------------------------------
+
+const EW_STARS = [
+  [12, 8],
+  [44, 18],
+  [96, 6],
+  [132, 24],
+  [168, 10],
+  [188, 30],
+  [70, 30],
+];
+const EW_PYLONS = [
+  [110, 30],
+  [150, 22],
+  [190, 30],
+];
+const EW_TURBINES = [
+  [60, 36],
+  [82, 44],
+];
+const EW_LINE = "M96 34 Q103 34 110 30 Q130 37 150 22 Q170 37 190 30 Q196 31 200 33";
+
+const ewSceneSvg = () => {
+  const stars = EW_STARS.map(([x, y], i) => `<circle class="ew-star${i % 3 ? "" : " tw"}" cx="${x}" cy="${y}" r=".6"/>`).join("");
+  const pylons = EW_PYLONS.map(([x, y]) => `<path class="ew-pylon" d="M${x - 7} 80 L${x} ${y} L${x + 7} 80 M${x - 4} ${y + 10} h8 M${x - 5} ${y + 22} h10 M${x - 5.6} ${y + 34} h11.2"/>`).join("");
+  const turbines = EW_TURBINES.map(
+    ([x, y]) =>
+      `<path class="ew-mast" d="M${x} 80 V${y}"/><g class="ew-rotor" style="transform-origin:${x}px ${y}px"><path d="M${x} ${y} l0 -12 M${x} ${y} l10.4 6 M${x} ${y} l-10.4 6"/></g><circle class="ew-hub" cx="${x}" cy="${y}" r="1.4"/>`,
+  ).join("");
+  return `<svg class="ew-scene" viewBox="0 0 200 80" preserveAspectRatio="xMaxYMax meet" aria-hidden="true" focusable="false">
+    <g class="ew-night">${stars}<circle class="ew-moon" cx="30" cy="14" r="5.5"/><circle class="ew-moon-cut" cx="32.5" cy="12" r="4.5"/></g>
+    <g class="ew-day"><circle class="ew-glow" cx="30" cy="14" r="9"/><circle class="ew-sun" cx="30" cy="14" r="6"/></g>
+    <g transform="translate(70 12)"><path class="ew-cloud" d="M-14,4 C-17,4 -18,0 -14.5,-1 C-14,-5 -8,-6 -6,-3 C-4,-8 4,-8 5,-2 C9,-3 12,0 10,4 Z"/></g>
+    <path class="ew-hill far" d="M0,80 C30,70 60,64 100,66 C140,68 170,60 200,62 L200,80Z"/>
+    <path class="ew-hill" d="M0,80 C40,74 90,75 200,72 L200,80Z"/>
+    ${turbines}${pylons}
+    <path class="ew-wire" d="${EW_LINE}"/><path class="ew-pulse" d="${EW_LINE}"/>
+    <circle class="ew-beacon" cx="150" cy="20" r="1.8"/>
+  </svg>`;
+};
+
+const EW_BANNER_STYLE = `
+  .banner { position: relative; overflow: hidden; height: 90px; --ew-g: 10px; --ew-scene-w: min(200px, 62%);
+            color: #0d2a45; --ew-sky-muted: #3b5b78; --ew-line: var(--ew-idle);
+            background: linear-gradient(90deg, #f1f8ff 0%, #e2f1fd 34%, #b9def8 70%, #9fd0f3 100%); }
+  .banner.night { color: #fff; --ew-sky-muted: rgba(255,255,255,.78);
+                  background: linear-gradient(90deg, #1b2f52 0%, #15284a 36%, #0f1f3d 72%, #0a1830 100%); }
+  .banner.lv-low { --ew-line: #00acc1; } .banner.lv-ok { --ew-line: #43c463; }
+  .banner.lv-warn { --ew-line: #ffa600; } .banner.lv-crit { --ew-line: #e5484d; }
+  .ew-scene { position: absolute; right: 0; bottom: var(--ew-g); height: calc(100% - var(--ew-g)); width: var(--ew-scene-w); }
+  /* The lawn strip, edge to edge under the whole banner. */
+  .ew-ground { position: absolute; left: 0; right: 0; bottom: 0; height: var(--ew-g);
+               background: repeating-linear-gradient(90deg, #5aa83d 0 22px, #6cbb4c 22px 44px); }
+  .night .ew-ground { background: repeating-linear-gradient(90deg, #1f4a2a 0 22px, #245433 22px 44px); }
+  .ew-night, .night .ew-day { display: none; }
+  .night .ew-night { display: inline; }
+  .ew-star { fill: #fff; opacity: .8; } .ew-star.tw { animation: ew-twinkle 3.2s ease-in-out infinite alternate; }
+  .ew-moon { fill: #f3eed2; } .ew-moon-cut { fill: #13254a; }
+  .ew-sun { fill: #ffd65a; } .ew-glow { fill: #ffd65a; opacity: .28; }
+  .ew-cloud { fill: #fff; opacity: .92; animation: ew-drift 4s ease-in-out infinite alternate; }
+  .night .ew-cloud { opacity: .1; }
+  .ew-hill { fill: #86c27f; } .ew-hill.far { fill: #a7d39f; }
+  .night .ew-hill { fill: #17303d; } .night .ew-hill.far { fill: #1d3a4a; }
+  .ew-pylon { stroke: #5f6b7a; stroke-width: 1.2; fill: none; stroke-linejoin: round; } .night .ew-pylon { stroke: #7d8793; }
+  .ew-mast { stroke: #e9edf1; stroke-width: 1.6; } .night .ew-mast { stroke: #c4ccd6; }
+  .ew-rotor { transform-box: view-box; animation: ew-spin 3s linear infinite; }
+  .ew-rotor path { stroke: #fff; stroke-width: 1.6; stroke-linecap: round; fill: none; } .night .ew-rotor path { stroke: #dfe5ec; }
+  .ew-hub { fill: #9aa3ae; }
+  .ew-wire { stroke: #8a939c; stroke-width: .9; fill: none; } .night .ew-wire { stroke: #4a5568; }
+  .ew-pulse { stroke: var(--ew-line); stroke-width: 1.5; fill: none; stroke-linecap: round; stroke-dasharray: 4 26; animation: ew-flow 1.4s linear infinite; }
+  .ew-beacon { fill: var(--ew-line); display: none; }
+  .lv-low .ew-rotor { animation-duration: 1.8s; }
+  .lv-warn .ew-rotor { animation-duration: 6s; }
+  .lv-crit .ew-rotor, .lv-none .ew-rotor { animation: none; }
+  .lv-warn .ew-pulse { animation-duration: .9s; }
+  .lv-crit .ew-pulse { stroke-dasharray: 6 6; animation: ew-flow .9s linear infinite, ew-blink 1.2s steps(2, jump-none) infinite; }
+  .lv-none .ew-pulse { display: none; }
+  .lv-warn .ew-beacon, .lv-crit .ew-beacon { display: inline; animation: ew-blink 1.2s steps(2, jump-none) infinite; }
+  .lv-warn .ew-beacon, .lv-crit .ew-beacon { filter: drop-shadow(0 0 1.5px var(--ew-line)); }
+  @keyframes ew-spin { to { transform: rotate(360deg); } }
+  @keyframes ew-flow { to { stroke-dashoffset: -30; } }
+  @keyframes ew-drift { to { transform: translateX(4px); } }
+  @keyframes ew-twinkle { from { opacity: .3; } to { opacity: 1; } }
+  /* The title on the sky, left of the scene: the round icon (its colour follows the signal), the name, the status. */
+  .htext { position: absolute; z-index: 1; left: 0; top: 0; bottom: var(--ew-g); right: calc(var(--ew-scene-w) + 4px);
+           display: flex; align-items: center; gap: 10px; padding: 8px 8px 8px 14px; min-width: 0; box-sizing: border-box; }
+  .banner .type-icon { background: rgba(255,255,255,.62); box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--ew-tint) 22%, transparent); }
+  .banner .type-icon .icon { fill: color-mix(in srgb, var(--ew-tint) 82%, #0d2a45); }
+  .banner.night .type-icon { background: rgba(255,255,255,.12); box-shadow: inset 0 0 0 1px rgba(255,255,255,.14); }
+  .banner.night .type-icon .icon { fill: color-mix(in srgb, var(--ew-tint) 78%, #fff); }
+  .banner .titles { display: flex; flex-direction: column; align-items: flex-start; gap: 3px; }
+  .banner .titles > * { max-width: 100%; }
+  .banner .name { font-size: 16px; font-weight: 500; line-height: 1.2; }
+  .banner .status { display: flex; min-width: 0; }
+  .banner .sub { color: var(--ew-sky-muted); font-size: 12px; min-width: 0; }
+  .banner .chip { max-width: 100%; line-height: 16px; background: rgba(255,255,255,.7); color: color-mix(in srgb, var(--c) 62%, #0d2a45); }
+  .banner.night .chip { background: rgba(10,20,40,.5); color: color-mix(in srgb, var(--c) 45%, #fff); }
+  .banner .zoom { position: absolute; z-index: 2; top: 6px; right: 6px; margin: 0; color: #0d2a45; background: rgba(255,255,255,.55); }
+  .banner.night .zoom { color: #fff; background: rgba(10,20,40,.45); }
+  .banner + .content { padding-top: 12px; }
+  /* Narrow card: no room for the scene beside the text, the sky and the lawn stay. */
+  @container (max-width: 300px) { .ew-scene { display: none; } .htext { right: 34px; } }
+`;
+
+// Night picture: forced by illustration_theme, else the sun below the horizon, else Home Assistant's dark mode.
+const ewIsNight = (hass, config) => {
+  const theme = config?.illustration_theme;
+  if (theme === "night") return true;
+  if (theme === "day") return false;
+  const sun = hass?.states?.["sun.sun"]?.state;
+  if (sun === "below_horizon" || sun === "above_horizon") return sun === "below_horizon";
+  return !!hass?.themes?.darkMode;
+};
+
+// ---------------------------------------------------------------------------
 // Cards
 // ---------------------------------------------------------------------------
 
@@ -2396,7 +2626,7 @@ class EcoWattCard extends CardBase {
   }
 
   _extraDeps() {
-    return [this._events];
+    return [this._events, this._hass?.states?.["sun.sun"]?.state];
   }
 
   _onConnect() {
@@ -2711,9 +2941,28 @@ class EcoWattCard extends CardBase {
     </div>`;
   }
 
+  // The header: the illustrated banner (the grid in the signal's colour, day or night), or the classic header
+  // (illustration: false). The icon's colour follows the current level, grey when it is unknown.
   _head(sum, sub) {
     const l = sum.now.level;
-    return this._header({ icon: ICONS[LEVEL_ICON[l ?? 1]], cls: l === null ? "accent" : LEVEL_CLASS[l], title: this._config.title || "EcoWatt", sub, chip: sum.chip });
+    const icon = ICONS[LEVEL_ICON[l ?? 1]];
+    const cls = l === null || l === undefined ? "idle" : LEVEL_CLASS[l];
+    const title = this._config.title || "EcoWatt";
+    if (this._config.illustration === false) return this._header({ icon, cls, title, sub, chip: sum.chip });
+    const chip = sum.chip;
+    const chipHtml = chip
+      ? `<span class="chip ${chip.cls}${chip.entity ? " clickable" : ""}"${moreInfo(chip.entity)} title="${esc(chip.text)}" aria-label="${esc(chip.text)}"><span class="dot"></span><span class="chip-text">${esc(
+          chip.text,
+        )}</span></span>`
+      : "";
+    const status = `${chipHtml ? `<div class="status">${chipHtml}</div>` : ""}${sub ? `<div class="sub">${esc(sub)}</div>` : ""}`;
+    const night = ewIsNight(this._hass, this._config) ? " night" : "";
+    return `<div class="banner lv-${l === null || l === undefined ? "none" : LEVEL_CLASS[l]}${night}">${ewSceneSvg()}<div class="ew-ground"></div>
+      <div class="htext"><div class="type-icon ${cls}">${svgIcon(icon)}</div><div class="titles"><div class="name">${esc(title)}</div>${status}</div></div>${this._zoomButton()}</div>`;
+  }
+
+  _bannerStyle() {
+    return this._config.illustration === false ? "" : EW_BANNER_STYLE;
   }
 
   _emptyKey(m) {
@@ -2725,7 +2974,7 @@ class EcoWattCard extends CardBase {
     if (error) return error;
     const sum = this._summary(m);
     const parts = [this._hero(sum), this._forecast(sum.days)];
-    return `<style>${BASE_STYLE}${ECO_STYLE}</style>
+    return `<style>${BASE_STYLE}${ECO_STYLE}${this._bannerStyle()}</style>
       <ha-card>
         ${this._head(sum, this._subtitle(sum))}
         <div class="content">${parts.join("")}</div>
@@ -2746,7 +2995,7 @@ class EcoWattMiniCard extends withMini(EcoWattCard) {
     const [today, tomorrow] = sum.days;
     const focus = today && (today.level ?? 0) < 2 && tomorrow && (tomorrow.level ?? 0) >= 2 ? tomorrow : today || tomorrow;
     const strip = focus && this._config.show_hours !== false ? this._strip(focus, true) : "";
-    return `<style>${BASE_STYLE}${ECO_STYLE}${MINI_STYLE}</style>
+    return `<style>${BASE_STYLE}${ECO_STYLE}${MINI_STYLE}${this._bannerStyle()}</style>
       <ha-card>
         ${this._head(sum, "")}
         <div class="content mini">
@@ -2764,6 +3013,7 @@ class EcoWattMiniCard extends withMini(EcoWattCard) {
 class EcoWattCardEditor extends EditorBase {
   static get toggles() {
     return [
+      ["illustration", true],
       ["show_title", true],
       ["show_subtitle", true],
       ["show_hours", true],
@@ -2775,11 +3025,17 @@ class EcoWattCardEditor extends EditorBase {
     return ["forecast"];
   }
 
+  static get defaults() {
+    return { illustration_theme: "auto" };
+  }
+
   _fields() {
+    const tr = (k) => t(this._hass, this._config, k);
     return [
       { name: "days", selector: { entity: { multiple: true, domain: "sensor" } } },
       { name: "now", selector: { entity: { domain: "sensor" } } },
       { name: "calendar", selector: { entity: { domain: "calendar" } } },
+      { name: "illustration_theme", selector: { select: { mode: "dropdown", options: ["auto", "day", "night"].map((value) => ({ value, label: tr(`theme_${value}`) })) } } },
     ];
   }
 }

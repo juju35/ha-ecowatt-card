@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.2.0 - 2026-11-17
+
+### Features
+- Animated illustrated header on the full and mini cards (90 px): the title on the sky, the grid at the right (wind turbines, pylons, power line) over a lawn strip. The pulse along the line takes the level's colour (teal, green, orange, red), the turbines slow down as the grid tightens and stop during cuts, and a beacon blinks on the middle pylon when the grid is tight or cut. The header icon's colour follows the level now (grey when unknown).
+- Night picture after sunset (`sun.sun`, else the dark theme), forced with the new `illustration_theme` option (`auto`, `day`, `night`); `illustration: false` keeps the classic header. Both options are in the visual editors.
+
 ## 1.1.0 - 2026-11-16
 
 ### Features
