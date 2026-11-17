@@ -122,6 +122,10 @@ test("header chip, hero and lines: tight tomorrow, the next tight period", async
   const { html } = await mount();
   const h = html();
   assert.match(h, /chip warn[^>]*>.*Tight tomorrow/s);
+  // The pill right after the title (its copy for a narrow card under the subtitle), in the header icon's colour.
+  assert.match(h, /class="title-row"><div class="name">EcoWatt<\/div><span class="chip warn/);
+  assert.match(h, /class="pill-line"><span class="chip warn/);
+  assert.match(h, /class="type-icon warn"/);
   assert.match(h, /class="big verdict ok"><b>Normal</);
   assert.match(h, /Tomorrow: tight 8 – 9 AM, 6 – 8 PM/);
   assert.match(h, /Next tight period tomorrow 8:00 AM/);
