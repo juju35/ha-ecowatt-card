@@ -5,7 +5,8 @@
 ### Features
 - Animated illustrated header on the full and mini cards (90 px): the title on the sky, the grid at the right (wind turbines, pylons, power line) over a lawn strip. The pulse along the line takes the level's colour (teal, green, orange, red), the turbines slow down as the grid tightens and stop during cuts, and a beacon blinks on the middle pylon when the grid is tight or cut. The header icon takes the colour of the status pill (the worst level of today and tomorrow, grey when unknown).
 - Status pill on the title line, right after the title (a line of its own under the subtitle when the title block is narrow, only its dot below 200 px); "No data" when nothing is published yet. The mini card's detail button is a 24 px round glass button in the top right corner of the header.
-- Night picture after sunset (`sun.sun`, else the dark theme), forced with the new `illustration_theme` option (`auto`, `day`, `night`); `illustration: false` keeps the classic header. Both options are in the visual editors.
+- Night picture after sunset (`sun.sun`) or with the dark theme, forced with the new `illustration_theme` option (`auto`, `day`, `night`); `illustration: false` keeps the classic header. Both options are in the visual editors.
+- Night picture with the dark theme even while the sun is up
 
 ## 1.1.0 - 2026-11-16
 

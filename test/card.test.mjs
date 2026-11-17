@@ -3,7 +3,7 @@ import { test } from "node:test";
 import { EVENTS, mockData, NOW } from "../scripts/mock-states.mjs";
 import { load } from "./load.mjs";
 
-const ew = load({ names: ["levelOf", "hoursFromAttributes", "resolve", "STRINGS", "LANGUAGES"] });
+const ew = load({ names: ["ewIsNight", "levelOf", "hoursFromAttributes", "resolve", "STRINGS", "LANGUAGES"] });
 const EcoWattCard = ew.element("ecowatt-card");
 const EcoWattMiniCard = ew.element("ecowatt-mini-card");
 // Objects from the sandbox have the sandbox's prototypes: compared as plain JSON.
@@ -316,4 +316,15 @@ test("the legend names only the levels shown; the next days still come from the 
   await new Promise((r) => setTimeout(r, 0));
   await new Promise((r) => setTimeout(r, 0));
   assert.equal((card.shadowRoot.innerHTML.match(/class="hour /g) || []).length, 48);
+});
+
+test("night picture: forced, else the sun below the horizon or the dark theme", () => {
+  const h = (sun, dark) => ({ states: sun ? { "sun.sun": { state: sun } } : {}, themes: { darkMode: dark } });
+  assert.equal(ew.ewIsNight(h("below_horizon", false), {}), true);
+  assert.equal(ew.ewIsNight(h("above_horizon", true), {}), true, "dark theme while the sun is up: night");
+  assert.equal(ew.ewIsNight(h("above_horizon", false), {}), false, "light theme while the sun is up: day");
+  assert.equal(ew.ewIsNight(h("unknown", true), {}), true, "no usable sun: the dark theme decides");
+  assert.equal(ew.ewIsNight(h(null, false), {}), false);
+  assert.equal(ew.ewIsNight(h("above_horizon", true), { illustration_theme: "day" }), false);
+  assert.equal(ew.ewIsNight(h("above_horizon", false), { illustration_theme: "night" }), true);
 });

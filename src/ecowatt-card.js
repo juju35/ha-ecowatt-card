@@ -2621,14 +2621,12 @@ const EW_BANNER_STYLE = `
   @container (max-width: 300px) { .ew-scene { display: none; } .htext { right: 34px; } }
 `;
 
-// Night picture: forced by illustration_theme, else the sun below the horizon, else Home Assistant's dark mode.
+// Night picture: forced by illustration_theme, else the sun below the horizon or Home Assistant's dark theme.
 const ewIsNight = (hass, config) => {
   const theme = config?.illustration_theme;
   if (theme === "night") return true;
   if (theme === "day") return false;
-  const sun = hass?.states?.["sun.sun"]?.state;
-  if (sun === "below_horizon" || sun === "above_horizon") return sun === "below_horizon";
-  return !!hass?.themes?.darkMode;
+  return hass?.states?.["sun.sun"]?.state === "below_horizon" || !!hass?.themes?.darkMode;
 };
 
 // ---------------------------------------------------------------------------
