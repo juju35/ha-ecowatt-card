@@ -32,7 +32,8 @@ The sensors are **discovered automatically** from the Home Assistant entity regi
 - **A 24-hour dial** of today: each hour round the clock in its level's colour, past hours faded, the hand on the current hour and the level now in the middle; a wave goes out of it while the grid is tight, its icon blinks during power cuts (see [Animations](#animations))
 - **A 4-day forecast grid**: one row a day, 24 hours a row, the current hour outlined, past hours faded, with a legend of the levels shown; hover or focus an hour to read its hour and level
 - The **tight hours** in words ("Tomorrow: tight 8 – 9 AM, 6 – 8 PM"), the **next tight period** ("Next tight period tomorrow 8:00 AM", "Tight grid now: save power")
-- Header icon in a tinted round badge, in the colour of the level now, and a status chip on the title's line: **No alert**, **Tight tomorrow**, **Cuts today**…
+- **An animated illustrated header** (90 px, full and mini card): the title on the sky at the left, the grid at the right (wind turbines, pylons, power line) over a lawn strip; the pulse running along the line takes the level's colour (teal low-carbon, green normal, orange tight, red cuts), the turbines slow down as the grid tightens and stop during cuts, a beacon blinks on the middle pylon when the grid is tight or cut. Night picture after sunset (`sun.sun`) or with the dark theme, or forced with `illustration_theme`; `illustration: false` brings back the classic header
+- Header icon in a round badge, in the colour of the level now (grey when unknown), and a status chip under the title: **No alert**, **Tight tomorrow**, **Cuts today**…
 - Collapsible forecast section, folded back to their defaults by a click elsewhere on the page
 - Detail button on the mini card (top right): it switches the mini card to the full card's content and back; a click anywhere outside the card brings the compact view back
 - Click any hour, day or line to open its Home Assistant history (more-info dialog)
@@ -122,6 +123,8 @@ show_title: true
 show_subtitle: true
 show_hours: true
 show_days: true
+illustration: true
+illustration_theme: auto
 collapsed: []
 language: en
 ```
@@ -144,6 +147,8 @@ language: en
 | `calendar` | both | Automatic | Calendar whose events are the tight hours (My EcoWatt by RTE: *Ecowatt downgraded level*) |
 | `show_hours` | both | `true` | Today's and tomorrow's rows in the forecast; with `false`, the calendar is not read |
 | `show_days` | both | `true` | The next days' rows in the forecast |
+| `illustration` | both | `true` | Animated illustrated header (the grid in the level's colour); `false`: the classic header |
+| `illustration_theme` | both | `auto` | Day or night picture: `auto` (night when `sun.sun` is below the horizon or the theme is dark), `day` or `night` |
 | `collapsed` | both | `[]` | Sections folded by default, only `forecast`. Click a section title (or Tab to it and press Enter or Space) to fold or unfold it |
 | `zoom` | mini | `true` | Detail button at the top right of the mini card: it shows the full card's content (with the same options, so `show_days`, `collapsed`… can be set on the mini card too, in its visual editor as well) and switches back to the compact view; a click outside the card also brings the compact view back. `false` removes the button |
 | `language` | both | Auto | Force language: `fr`, `en`, `de`, `es`, `sr`, `sr-Latn`, `it`, `nl`, `pt`, `pl`, `ro`, `da`, `sv`, `bg`, `ru`, `uk`, `hu`, `sk`, `cs`, `sl`, `lv` or `el` (auto-detects from HA settings) |

@@ -3,7 +3,7 @@ import { test } from "node:test";
 import { EVENTS, mockData, NOW } from "../scripts/mock-states.mjs";
 import { load } from "./load.mjs";
 
-const ew = load({ names: ["levelOf", "hoursFromAttributes", "resolve", "STRINGS", "LANGUAGES"] });
+const ew = load({ names: ["ewIsNight", "levelOf", "hoursFromAttributes", "resolve", "STRINGS", "LANGUAGES"] });
 const EcoWattCard = ew.element("ecowatt-card");
 const EcoWattMiniCard = ew.element("ecowatt-mini-card");
 // Objects from the sandbox have the sandbox's prototypes: compared as plain JSON.
@@ -122,6 +122,9 @@ test("header chip, hero and lines: tight tomorrow, the next tight period", async
   const { html } = await mount();
   const h = html();
   assert.match(h, /chip warn[^>]*>.*Tight tomorrow/s);
+  // The pill right after the title (moved under the subtitle by _fitPill when it does not fit), in the header icon's colour.
+  assert.match(h, /class="title-row"><div class="name">EcoWatt<\/div><span class="chip warn/);
+  assert.match(h, /class="type-icon warn"/);
   assert.match(h, /class="big verdict ok"><b>Normal</);
   assert.match(h, /Tomorrow: tight 8 – 9 AM, 6 – 8 PM/);
   assert.match(h, /Next tight period tomorrow 8:00 AM/);
@@ -312,4 +315,15 @@ test("the legend names only the levels shown; the next days still come from the 
   await new Promise((r) => setTimeout(r, 0));
   await new Promise((r) => setTimeout(r, 0));
   assert.equal((card.shadowRoot.innerHTML.match(/class="hour /g) || []).length, 48);
+});
+
+test("night picture: forced, else the sun below the horizon or the dark theme", () => {
+  const h = (sun, dark) => ({ states: sun ? { "sun.sun": { state: sun } } : {}, themes: { darkMode: dark } });
+  assert.equal(ew.ewIsNight(h("below_horizon", false), {}), true);
+  assert.equal(ew.ewIsNight(h("above_horizon", true), {}), true, "dark theme while the sun is up: night");
+  assert.equal(ew.ewIsNight(h("above_horizon", false), {}), false, "light theme while the sun is up: day");
+  assert.equal(ew.ewIsNight(h("unknown", true), {}), true, "no usable sun: the dark theme decides");
+  assert.equal(ew.ewIsNight(h(null, false), {}), false);
+  assert.equal(ew.ewIsNight(h("above_horizon", true), { illustration_theme: "day" }), false);
+  assert.equal(ew.ewIsNight(h("above_horizon", false), { illustration_theme: "night" }), true);
 });
