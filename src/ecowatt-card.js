@@ -1457,7 +1457,8 @@ const parseTime = (v) => {
   if (v === null || v === undefined || v === "" || v === "unknown" || v === "unavailable") return null;
   if (typeof v === "number") return v > 1e11 ? v : v * 1000;
   const s = String(v);
-  const ms = Date.parse(/^\d{4}-\d{2}-\d{2} \d/.test(s) ? s.replace(" ", "T") : s);
+  // A date alone ("2026-11-20", an all-day calendar event) is local midnight, not UTC midnight as Date.parse reads it.
+  const ms = Date.parse(/^\d{4}-\d{2}-\d{2}$/.test(s) ? `${s}T00:00` : /^\d{4}-\d{2}-\d{2} \d/.test(s) ? s.replace(" ", "T") : s);
   return Number.isFinite(ms) ? ms : null;
 };
 
@@ -1878,6 +1879,7 @@ class CardBase extends HTMLElement {
 
   disconnectedCallback() {
     this._pillResize?.disconnect();
+    if (this._pillFrame) cancelAnimationFrame(this._pillFrame);
     this._pillWidth = null;
     this._pressing = this._dirty = false;
     window.removeEventListener("pointerup", this._onPressEnd, true);
@@ -2708,10 +2710,6 @@ class EcoWattCard extends CardBase {
     this._fetchCalendar(true);
   }
 
-  _onDisconnect() {
-    clearTimeout(this._calTimer);
-  }
-
   _configChanged() {
     this._events = undefined;
     this._calKey = null;
@@ -2735,6 +2733,8 @@ class EcoWattCard extends CardBase {
     const end = new Date(startOfDay(Date.now()) + MAX_DAYS * DAY_MS).toISOString();
     Promise.resolve(this._hass.callApi("GET", `calendars/${cal}?start=${encodeURIComponent(start)}&end=${encodeURIComponent(end)}`))
       .then((events) => {
+        // An answer to an earlier request (the configuration or the calendar changed meanwhile) is dropped.
+        if (this._calKey !== key) return;
         this._events = Array.isArray(events) ? events : [];
         this._lastDeps = null;
         this._update();
@@ -3100,8 +3100,10 @@ class EcoWattCardEditor extends EditorBase {
 
   _fields() {
     const tr = (k) => t(this._hass, this._config, k);
+    // `days` written as objects ({ entity, attribute }) is YAML-only: the entity picker would drop the attributes.
+    const days = asList(this._config.days);
     return [
-      { name: "days", selector: { entity: { multiple: true, domain: "sensor" } } },
+      ...(days.every((d) => typeof d === "string") ? [{ name: "days", selector: { entity: { multiple: true, domain: "sensor" } } }] : []),
       { name: "now", selector: { entity: { domain: "sensor" } } },
       { name: "calendar", selector: { entity: { domain: "calendar" } } },
       { name: "illustration_theme", selector: { select: { mode: "dropdown", options: ["auto", "day", "night"].map((value) => ({ value, label: tr(`theme_${value}`) })) } } },
