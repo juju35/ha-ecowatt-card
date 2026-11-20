@@ -7,6 +7,7 @@
 - Visual editor: `days` written as objects (`entity` + `attribute`) is no longer shown in the entity picker, which would have dropped the attributes; it stays YAML only.
 
 ### Maintenance
+- CI: the validate job caches the npm downloads (`setup-node` with `cache: npm`).
 - The commit-msg hook works again (the commitlint config is an ES module, as `package.json` declares).
 - Unused calendar timer removed; the pending status pill frame is cancelled when the card leaves the page.
 - README: `show_subtitle` applies to both cards (the mini card's detail view).
