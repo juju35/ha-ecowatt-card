@@ -141,8 +141,8 @@ language: en
 |---|---|---|---|
 | `title` | both | EcoWatt | Card title |
 | `show_title` | both | `true` | Show the title in the header |
-| `show_subtitle` | full | `true` | Show the subtitle (when RTE published the signal) |
-| `days` | both | Automatic | Day sensors, today first: entity ids, or objects with `entity` and `attribute` (the attribute holding the day's hours); absent, the sensors of the [supported integrations](#supported-integrations) |
+| `show_subtitle` | both | `true` | Show the subtitle (when RTE published the signal); the mini card shows it in its detail view |
+| `days` | both | Automatic | Day sensors, today first: entity ids, or objects with `entity` and `attribute` (the attribute holding the day's hours — objects are YAML only); absent, the sensors of the [supported integrations](#supported-integrations) |
 | `now` | both | Automatic | Sensor of the level of the current hour (My EcoWatt by RTE: *Ecowatt level now*) |
 | `calendar` | both | Automatic | Calendar whose events are the tight hours (My EcoWatt by RTE: *Ecowatt downgraded level*) |
 | `show_hours` | both | `true` | Today's and tomorrow's rows in the forecast; with `false`, the calendar is not read |

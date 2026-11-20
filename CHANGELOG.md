@@ -1,5 +1,17 @@
 # Changelog
 
+## 1.2.2 - 2026-11-20
+
+### Fixes
+- My EcoWatt by RTE calendar: an all-day event is read on its local day (it was read as UTC midnight), and an answer to an earlier request (the calendar or the configuration changed meanwhile) no longer replaces the current events.
+- Visual editor: `days` written as objects (`entity` + `attribute`) is no longer shown in the entity picker, which would have dropped the attributes; it stays YAML only.
+
+### Maintenance
+- CI: the validate job caches the npm downloads (`setup-node` with `cache: npm`).
+- The commit-msg hook works again (the commitlint config is an ES module, as `package.json` declares).
+- Unused calendar timer removed; the pending status pill frame is cancelled when the card leaves the page.
+- README: `show_subtitle` applies to both cards (the mini card's detail view).
+
 ## 1.2.1 - 2026-11-18
 
 ### Fixes

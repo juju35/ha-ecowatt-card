@@ -328,3 +328,27 @@ test("night picture: forced, else the dark theme alone", () => {
   assert.equal(ew.ewIsNight(h("above_horizon", true), { illustration_theme: "day" }), false);
   assert.equal(ew.ewIsNight(h("above_horizon", false), { illustration_theme: "night" }), true);
 });
+
+test("review: an all-day calendar event is read at local midnight, a stale calendar answer is dropped, object days stay YAML-only", async () => {
+  const { card, hass } = await mount();
+  // Date-only values are local days (the tests run in UTC; the parse must not be Date.parse's UTC reading elsewhere).
+  const local = new ew.window.Date(2026, 10, 20).getTime();
+  const { parseTime } = load({ names: ["parseTime"] });
+  assert.equal(parseTime("2026-11-20"), local);
+  // An answer whose request is no longer the current one does not replace the events.
+  let release;
+  hass.callApi = () => new Promise((r) => (release = r));
+  card._fetchCalendar(true);
+  const kept = card._events;
+  card._calKey = "other";
+  release([{ start: { dateTime: "x" }, end: { dateTime: "y" } }]);
+  await new Promise((r) => setTimeout(r, 0));
+  assert.equal(card._events, kept);
+  const Editor = ew.element("ecowatt-card-editor");
+  const ed = new Editor();
+  ed._hass = hass;
+  ed._config = { days: [{ entity: "sensor.a", attribute: "hours" }] };
+  assert.equal(ed._schema().some((f) => f.name === "days"), false);
+  ed._config = { days: ["sensor.a"] };
+  assert.equal(ed._schema().some((f) => f.name === "days"), true);
+});
