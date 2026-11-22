@@ -1,6 +1,6 @@
 {
   "name": "ha-ecowatt-card",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "Lovelace cards for Home Assistant: the French electricity grid signal EcoWatt (RTE): today's and tomorrow's level hour by hour, the next days, and the next tight period.",
   "private": true,
   "type": "module",
