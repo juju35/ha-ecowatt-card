@@ -181,7 +181,8 @@ export const EW_BANNER_STYLE = `
   @container (max-width: 300px) { .ew-scene { display: none; } .htext { right: 34px; } }
 `;
 
-// Night picture: forced by illustration_theme, else the sun below the horizon or Home Assistant's dark theme.
+// Night picture: forced by illustration_theme, else Home Assistant's dark theme alone (a light theme keeps the day
+// picture after sunset).
 // The width of an element's whole text in fractional pixels, even while it is cut with an ellipsis (0 when hidden).
 export const textWidth = (el) => {
   if (!el?.getClientRects?.().length || typeof document.createRange !== "function") return 0;
